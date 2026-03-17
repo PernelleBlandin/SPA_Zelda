@@ -1,0 +1,1 @@
+import Home from './views/pages/Home.js';
