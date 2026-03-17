@@ -1,0 +1,329 @@
+{
+  "personnages": [
+    {
+      "id": "1",
+      "nom": "Link",
+      "race": "Hylien",
+      "coeurs": 3,
+      "endurance": 1,
+      "niveau": 1,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/link/image",
+      "equipementIds": ["w1", "s1", "b1"]
+    },
+    {
+      "id": "2",
+      "nom": "Mipha",
+      "race": "Zora",
+      "coeurs": 10,
+      "endurance": 2,
+      "niveau": 5,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/mipha/image",
+      "equipementIds": ["w2"]
+    },
+    {
+      "id": "3",
+      "nom": "Daruk",
+      "race": "Goron",
+      "coeurs": 15,
+      "endurance": 1,
+      "niveau": 5,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/daruk/image",
+      "equipementIds": ["w3"]
+    },
+    {
+      "id": "4",
+      "nom": "Revali",
+      "race": "Piaf",
+      "coeurs": 8,
+      "endurance": 3,
+      "niveau": 5,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/revali/image",
+      "equipementIds": ["b2"]
+    },
+    {
+      "id": "5",
+      "nom": "Urbosa",
+      "race": "Gerudo",
+      "coeurs": 12,
+      "endurance": 2,
+      "niveau": 5,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/urbosa/image",
+      "equipementIds": ["w4", "s2"]
+    },
+    {
+      "id": "6",
+      "nom": "Zelda",
+      "race": "Hylienne",
+      "coeurs": 10,
+      "endurance": 2,
+      "niveau": 10,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/zelda/image",
+      "equipementIds": []
+    },
+    {
+      "id": "7",
+      "nom": "Sidon",
+      "race": "Zora",
+      "coeurs": 12,
+      "endurance": 2,
+      "niveau": 3,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/prince_sidon/image",
+      "equipementIds": ["w8"]
+    },
+    {
+      "id": "8",
+      "nom": "Yunobo",
+      "race": "Goron",
+      "coeurs": 14,
+      "endurance": 1,
+      "niveau": 2,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/yunobo/image",
+      "equipementIds": ["w3"]
+    },
+    {
+      "id": "9",
+      "nom": "Teba",
+      "race": "Piaf",
+      "coeurs": 10,
+      "endurance": 3,
+      "niveau": 3,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/teba/image",
+      "equipementIds": ["b1"]
+    },
+    {
+      "id": "10",
+      "nom": "Riju",
+      "race": "Gerudo",
+      "coeurs": 8,
+      "endurance": 2,
+      "niveau": 3,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/riju/image",
+      "equipementIds": ["s2"]
+    },
+    {
+      "id": "11",
+      "nom": "Impa",
+      "race": "Sheikah",
+      "coeurs": 5,
+      "endurance": 2,
+      "niveau": 10,
+      "image": "https://api.dicebear.com/7.x/bottts/svg?seed=Impa",
+      "equipementIds": []
+    },
+    {
+      "id": "12",
+      "nom": "Paya",
+      "race": "Sheikah",
+      "coeurs": 4,
+      "endurance": 1,
+      "niveau": 1,
+      "image": "https://api.dicebear.com/7.x/bottts/svg?seed=Paya",
+      "equipementIds": []
+    },
+    {
+      "id": "13",
+      "nom": "Faras",
+      "race": "Sheikah",
+      "coeurs": 3,
+      "endurance": 1,
+      "niveau": 8,
+      "image": "https://api.dicebear.com/7.x/bottts/svg?seed=Robbie",
+      "equipementIds": ["w9"]
+    },
+    {
+      "id": "14",
+      "nom": "Terry",
+      "race": "Hylien",
+      "coeurs": 4,
+      "endurance": 5,
+      "niveau": 1,
+      "image": "https://api.dicebear.com/7.x/bottts/svg?seed=Beedle",
+      "equipementIds": []
+    },
+    {
+      "id": "15",
+      "nom": "Noïa",
+      "race": "Korogu",
+      "coeurs": 20,
+      "endurance": 1,
+      "niveau": 1,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/hestu/image",
+      "equipementIds": []
+    },
+    {
+      "id": "16",
+      "nom": "Asarim",
+      "race": "Piaf",
+      "coeurs": 6,
+      "endurance": 2,
+      "niveau": 4,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/kass/image",
+      "equipementIds": []
+    },
+    {
+      "id": "17",
+      "nom": "Rhoam B. Hyrule",
+      "race": "Hylien",
+      "coeurs": 15,
+      "endurance": 2,
+      "niveau": 10,
+      "image": "https://api.dicebear.com/7.x/bottts/svg?seed=Rhoam",
+      "equipementIds": ["w8"]
+    }
+  ],
+  "monstres": [
+    {
+      "id": "m1",
+      "nom": "Bokoblin Rouge",
+      "type": "Standard",
+      "points_de_vie": 13,
+      "niveau": 1,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/bokoblin/image",
+      "equipementIds": ["w6", "s3"]
+    },
+    {
+      "id": "m2",
+      "nom": "Lizalfos Bleu",
+      "type": "Aquatique",
+      "points_de_vie": 120,
+      "niveau": 2,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/blue_lizalfos/image",
+      "equipementIds": ["w7", "w9"]
+    },
+    {
+      "id": "m3",
+      "nom": "Lynel d'Argent",
+      "type": "Élite",
+      "points_de_vie": 6000,
+      "niveau": 5,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/silver_lynel/image",
+      "equipementIds": ["w5", "b3", "s1"]
+    },
+    {
+      "id": "m4",
+      "nom": "Moblin",
+      "type": "Standard",
+      "points_de_vie": 56,
+      "niveau": 1,
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/moblin/image",
+      "equipementIds": ["w6"]
+    }
+  ],
+  "equipements": [
+    {
+      "id": "w1",
+      "nom": "Épée de légende",
+      "type": "Arme",
+      "attaque": 30,
+      "description": "L'épée qui repousse le mal."
+    },
+    {
+      "id": "w2",
+      "nom": "Lance d'écailles de lumière",
+      "type": "Arme",
+      "attaque": 22,
+      "description": "Une lance élégante maniée par Mipha."
+    },
+    {
+      "id": "w3",
+      "nom": "Brise-montagne",
+      "type": "Arme",
+      "attaque": 60,
+      "description": "Une arme massive qui peut briser les rochers."
+    },
+    {
+      "id": "w4",
+      "nom": "Cimeterre de la Dualité",
+      "type": "Arme",
+      "attaque": 32,
+      "description": "L'arme favorite d'Urbosa."
+    },
+    {
+      "id": "w5",
+      "nom": "Épée de Lynel",
+      "type": "Arme",
+      "attaque": 24,
+      "description": "Une lame brute et dévastatrice."
+    },
+    {
+      "id": "w6",
+      "nom": "Masse boko",
+      "type": "Arme",
+      "attaque": 6,
+      "description": "Une arme rudimentaire faite de bois dur."
+    },
+    {
+      "id": "w7",
+      "nom": "Boomerang de lézard",
+      "type": "Arme",
+      "attaque": 10,
+      "description": "Utilisé par les Lizalfos."
+    },
+    {
+      "id": "w8",
+      "nom": "Lance de soldat",
+      "type": "Arme",
+      "attaque": 7,
+      "description": "Une lance standard en acier."
+    },
+    {
+      "id": "w9",
+      "nom": "Épée de foudre",
+      "type": "Arme",
+      "attaque": 22,
+      "description": "Une épée magique forgée dans les montagnes."
+    },
+    {
+      "id": "b1",
+      "nom": "Arc de voyageur",
+      "type": "Arc",
+      "attaque": 5,
+      "description": "Un arc simple pour débutants."
+    },
+    {
+      "id": "b2",
+      "nom": "Arc de l'aigle",
+      "type": "Arc",
+      "attaque": 28,
+      "description": "L'arc légendaire de Revali."
+    },
+    {
+      "id": "b3",
+      "nom": "Grand arc de Lynel",
+      "type": "Arc",
+      "attaque": 32,
+      "description": "Tire plusieurs flèches à la fois."
+    },
+    {
+      "id": "s1",
+      "nom": "Bouclier d'Hylia",
+      "type": "Bouclier",
+      "defense": 90,
+      "description": "Le bouclier ultime."
+    },
+    {
+      "id": "s2",
+      "nom": "Bouclier du Mirage",
+      "type": "Bouclier",
+      "defense": 48,
+      "description": "Un bouclier Gerudo orné de pierres."
+    },
+    {
+      "id": "s3",
+      "nom": "Bouclier boko",
+      "type": "Bouclier",
+      "defense": 3,
+      "description": "Une simple plaque de bois."
+    }
+  ],
+  "categories": [
+    { "id": 1, "nom": "Hylien" },
+    { "id": 2, "nom": "Zora" },
+    { "id": 3, "nom": "Goron" },
+    { "id": 4, "nom": "Piaf" },
+    { "id": 5, "nom": "Gerudo" },
+    { "id": 6, "nom": "Sheikah" },
+    { "id": 7, "nom": "Korogu" },
+    { "id": 8, "nom": "Monstre" }
+  ]
+}
