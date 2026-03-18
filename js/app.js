@@ -15,9 +15,7 @@ const routes = {
     "/personnages": CharacterAll,
     "/personnages/:id": CharacterShow,
     "/equipements": WeaponAll,
-    "/equipements/id": WeaponShow
-
-
+    "/equipements/:id": WeaponShow
 };
 
 const router = async()=>{
