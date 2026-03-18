@@ -14,3 +14,4 @@ terminal 2 :
 Pour aller sur le json : 
     http://localhost:3000/personnages
     http://localhost:3000/equipements
+
