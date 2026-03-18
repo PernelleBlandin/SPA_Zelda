@@ -11,10 +11,13 @@ export default class WeaponShow {
         let view = `
             <section>
                 <h2>${equipement.nom}</h2>
+                <img class="equipement-pic" src="${equipement.image}" alt="Image de l'arme ${equipement.nom}"/>
+                <p>${equipement.description}</p>
                 <p> ID : ${equipement.id}</p>
+                <p>Type d'équipement : ${equipement.type}</p>
+                <p>Puissance : ${equipement.puissance}</p>
             </section>
             `;
-            console.log("ici");
         return view
     }
 }

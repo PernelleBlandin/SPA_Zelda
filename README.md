@@ -15,3 +15,5 @@ Pour aller sur le json :
     http://localhost:3000/personnages
     http://localhost:3000/equipements
 
+
+Pour voir les images, soyez bien connecté à Internet.

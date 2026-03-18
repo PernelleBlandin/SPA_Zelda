@@ -173,7 +173,7 @@
   ],
   "monstres": [
     {
-      "id": "1",
+      "id": "m1",
       "nom": "Bokoblin Rouge",
       "type": "Standard",
       "points_de_vie": 13,
@@ -182,7 +182,7 @@
       "equipementIds": ["6", "15"]
     },
     {
-      "id": "2",
+      "id": "m2",
       "nom": "Lizalfos Bleu",
       "type": "Aquatique",
       "points_de_vie": 120,
@@ -191,7 +191,7 @@
       "equipementIds": ["7", "9"]
     },
     {
-      "id": "3",
+      "id": "m3",
       "nom": "Lynel d'Argent",
       "type": "Élite",
       "points_de_vie": 6000,
@@ -200,7 +200,7 @@
       "equipementIds": ["5", "12", "13"]
     },
     {
-      "id": "4",
+      "id": "m4",
       "nom": "Moblin",
       "type": "Standard",
       "points_de_vie": 56,
@@ -211,109 +211,124 @@
   ],
   "equipements": [
     {
-      "id": "1",
+      "id": "w1",
       "nom": "Épée de légende",
       "type": "Arme",
-      "attaque": 30,
-      "description": "L'épée qui repousse le mal."
+      "puissance": 30,
+      "description": "L'épée qui repousse le mal.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/master_sword/image"
     },
     {
-      "id": "2",
+      "id": "w2",
       "nom": "Lance d'écailles de lumière",
       "type": "Arme",
-      "attaque": 22,
-      "description": "Une lance élégante maniée par Mipha."
+      "puissance": 22,
+      "description": "Une lance élégante maniée par Mipha.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/lightscale_trident/image"
     },
     {
-      "id": "3",
+      "id": "w3",
       "nom": "Brise-montagne",
       "type": "Arme",
-      "attaque": 60,
-      "description": "Une arme massive qui peut briser les rochers."
+      "puissance": 60,
+      "description": "Une arme massive qui peut briser les rochers.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/boulder_breaker/image"
     },
     {
-      "id": "4",
+      "id": "w4",
       "nom": "Cimeterre de la Dualité",
       "type": "Arme",
-      "attaque": 32,
-      "description": "L'arme favorite d'Urbosa."
+      "puissance": 32,
+      "description": "L'arme favorite d'Urbosa.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/scimitar_of_the_seven/image"
     },
     {
-      "id": "5",
+      "id": "w5",
       "nom": "Épée de Lynel",
       "type": "Arme",
-      "attaque": 24,
-      "description": "Une lame brute et dévastatrice."
+      "puissance": 24,
+      "description": "Une lame brute et dévastatrice.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/lynel_sword/image"
     },
     {
-      "id": "6",
+      "id": "w6",
       "nom": "Masse boko",
       "type": "Arme",
-      "attaque": 6,
-      "description": "Une arme rudimentaire faite de bois dur."
+      "puissance": 6,
+      "description": "Une arme rudimentaire faite de bois dur.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/boko_club/image"
     },
     {
-      "id": "7",
+      "id": "w7",
       "nom": "Boomerang de lézard",
       "type": "Arme",
-      "attaque": 10,
-      "description": "Utilisé par les Lizalfos."
+      "puissance": 10,
+      "description": "Utilisé par les Lizalfos.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/lizal_boomerang/image"
     },
     {
-      "id": "8",
+      "id": "w8",
       "nom": "Lance de soldat",
       "type": "Arme",
-      "attaque": 7,
-      "description": "Une lance standard en acier."
+      "puissance": 7,
+      "description": "Une lance standard en acier.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/soldier's_spear/image"
     },
     {
-      "id": "9",
+      "id": "w9",
       "nom": "Épée de foudre",
       "type": "Arme",
-      "attaque": 22,
-      "description": "Une épée magique forgée dans les montagnes."
+      "puissance": 22,
+      "description": "Une épée magique forgée dans les montagnes.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/thunderblade/image"
     },
     {
-      "id": "10",
+      "id": "b1",
       "nom": "Arc de voyageur",
       "type": "Arc",
-      "attaque": 5,
-      "description": "Un arc simple pour débutants."
+      "puissance": 5,
+      "description": "Un arc simple pour débutants.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/traveler's_bow/image"
     },
     {
-      "id": "11",
+      "id": "b2",
       "nom": "Arc de l'aigle",
       "type": "Arc",
-      "attaque": 28,
-      "description": "L'arc légendaire de Revali."
+      "puissance": 28,
+      "description": "L'arc légendaire de Revali.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/great_eagle_bow/image"
     },
     {
-      "id": "12",
+      "id": "b3",
       "nom": "Grand arc de Lynel",
       "type": "Arc",
-      "attaque": 32,
-      "description": "Tire plusieurs flèches à la fois."
+      "puissance": 32,
+      "description": "Tire plusieurs flèches à la fois.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/lynel_bow/image"
     },
     {
-      "id": "13",
+      "id": "s1",
       "nom": "Bouclier d'Hylia",
       "type": "Bouclier",
-      "defense": 90,
-      "description": "Le bouclier ultime."
+      "puissance": 90,
+      "description": "Le bouclier ultime.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/hylian_shield/image"
     },
     {
-      "id": "14",
+      "id": "s2",
       "nom": "Bouclier du Mirage",
       "type": "Bouclier",
-      "defense": 48,
-      "description": "Un bouclier Gerudo orné de pierres."
+      "puissance": 48,
+      "description": "Un bouclier Gerudo orné de pierres.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/radiant_shield/image"
     },
     {
-      "id": "15",
+      "id": "s3",
       "nom": "Bouclier boko",
       "type": "Bouclier",
-      "defense": 3,
-      "description": "Une simple plaque de bois."
+      "puissance": 3,
+      "description": "Une simple plaque de bois.",
+      "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/boko_shield/image"
     }
   ],
   "categories": [

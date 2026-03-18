@@ -12,7 +12,7 @@ export default class CharacterShow {
                 <h2>${character.nom}</h2>
                 <p> ID : ${character.id}</p>
                 <p>${character.race}</p>
-                <img class="perso-pic" src="${character.image}" alt="Image du personnage Link"/>
+                <img class="perso-pic" src="${character.image}" alt="Image du personnage ${character.nom}"/>
             </section>
             `;
 
