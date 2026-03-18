@@ -5,6 +5,8 @@ import CharacterAll from "./views/pages/CharacterAll.js";
 import CharacterShow from "./views/pages/CharacterShow.js";
 import WeaponAll from "./views/pages/WeaponAll.js";
 import WeaponShow from "./views/pages/WeaponShow.js";
+import MonsterAll from "./views/pages/MonsterAll.js";
+import MonsterShow from "./views/pages/MonsterShow.js";
 import About from "./views/pages/About.js";
 
 import Error404 from "./views/pages/Error404.js";
@@ -15,7 +17,10 @@ const routes = {
     "/personnages": CharacterAll,
     "/personnages/:id": CharacterShow,
     "/equipements": WeaponAll,
-    "/equipements/:id": WeaponShow
+    "/equipements/:id": WeaponShow,
+    "/monstres": MonsterAll,
+    "/monstres/:id": MonsterShow
+
 };
 
 const router = async()=>{
