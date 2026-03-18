@@ -8,7 +8,7 @@
       "endurance": 1,
       "niveau": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/link.webp?raw=true",
-      "equipementIds": ["w1", "s1", "b1"]
+      "equipementIds": ["1", "13", "10"]
     },
     {
       "id": "2",
@@ -18,7 +18,7 @@
       "endurance": 2,
       "niveau": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/mipha.webp?raw=true",
-      "equipementIds": ["w2"]
+      "equipementIds": ["2"]
     },
     {
       "id": "3",
@@ -28,7 +28,7 @@
       "endurance": 1,
       "niveau": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/daruk.webp?raw=true",
-      "equipementIds": ["w3"]
+      "equipementIds": ["3"]
     },
     {
       "id": "4",
@@ -38,7 +38,7 @@
       "endurance": 3,
       "niveau": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/revali.webp?raw=true",
-      "equipementIds": ["b2"]
+      "equipementIds": ["11"]
     },
     {
       "id": "5",
@@ -48,7 +48,7 @@
       "endurance": 2,
       "niveau": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/urbosa.webp?raw=true",
-      "equipementIds": ["w4", "s2"]
+      "equipementIds": ["4", "14"]
     },
     {
       "id": "6",
@@ -68,7 +68,7 @@
       "endurance": 2,
       "niveau": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/sidon.webp?raw=true",
-      "equipementIds": ["w8"]
+      "equipementIds": ["8"]
     },
     {
       "id": "8",
@@ -78,7 +78,7 @@
       "endurance": 1,
       "niveau": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/yunobo.webp?raw=true",
-      "equipementIds": ["w3"]
+      "equipementIds": ["3"]
     },
     {
       "id": "9",
@@ -88,7 +88,7 @@
       "endurance": 3,
       "niveau": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/teba.webp?raw=true",
-      "equipementIds": ["b1"]
+      "equipementIds": ["10"]
     },
     {
       "id": "10",
@@ -98,7 +98,7 @@
       "endurance": 2,
       "niveau": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/riju.webp?raw=true",
-      "equipementIds": ["s2"]
+      "equipementIds": ["14"]
     },
     {
       "id": "11",
@@ -128,7 +128,7 @@
       "endurance": 1,
       "niveau": 8,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/faras.webp?raw=true",
-      "equipementIds": ["w9"]
+      "equipementIds": ["9"]
     },
     {
       "id": "14",
@@ -168,148 +168,148 @@
       "endurance": 2,
       "niveau": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/roam.webp?raw=true",
-      "equipementIds": ["w8"]
+      "equipementIds": ["8"]
     }
   ],
   "monstres": [
     {
-      "id": "m1",
+      "id": "1",
       "nom": "Bokoblin Rouge",
       "type": "Standard",
       "points_de_vie": 13,
       "niveau": 1,
       "image": "",
-      "equipementIds": ["w6", "s3"]
+      "equipementIds": ["6", "15"]
     },
     {
-      "id": "m2",
+      "id": "2",
       "nom": "Lizalfos Bleu",
       "type": "Aquatique",
       "points_de_vie": 120,
       "niveau": 2,
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/blue_lizalfos/image",
-      "equipementIds": ["w7", "w9"]
+      "equipementIds": ["7", "9"]
     },
     {
-      "id": "m3",
+      "id": "3",
       "nom": "Lynel d'Argent",
       "type": "Élite",
       "points_de_vie": 6000,
       "niveau": 5,
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/silver_lynel/image",
-      "equipementIds": ["w5", "b3", "s1"]
+      "equipementIds": ["5", "12", "13"]
     },
     {
-      "id": "m4",
+      "id": "4",
       "nom": "Moblin",
       "type": "Standard",
       "points_de_vie": 56,
       "niveau": 1,
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/moblin/image",
-      "equipementIds": ["w6"]
+      "equipementIds": ["6"]
     }
   ],
   "equipements": [
     {
-      "id": "w1",
+      "id": "1",
       "nom": "Épée de légende",
       "type": "Arme",
       "attaque": 30,
       "description": "L'épée qui repousse le mal."
     },
     {
-      "id": "w2",
+      "id": "2",
       "nom": "Lance d'écailles de lumière",
       "type": "Arme",
       "attaque": 22,
       "description": "Une lance élégante maniée par Mipha."
     },
     {
-      "id": "w3",
+      "id": "3",
       "nom": "Brise-montagne",
       "type": "Arme",
       "attaque": 60,
       "description": "Une arme massive qui peut briser les rochers."
     },
     {
-      "id": "w4",
+      "id": "4",
       "nom": "Cimeterre de la Dualité",
       "type": "Arme",
       "attaque": 32,
       "description": "L'arme favorite d'Urbosa."
     },
     {
-      "id": "w5",
+      "id": "5",
       "nom": "Épée de Lynel",
       "type": "Arme",
       "attaque": 24,
       "description": "Une lame brute et dévastatrice."
     },
     {
-      "id": "w6",
+      "id": "6",
       "nom": "Masse boko",
       "type": "Arme",
       "attaque": 6,
       "description": "Une arme rudimentaire faite de bois dur."
     },
     {
-      "id": "w7",
+      "id": "7",
       "nom": "Boomerang de lézard",
       "type": "Arme",
       "attaque": 10,
       "description": "Utilisé par les Lizalfos."
     },
     {
-      "id": "w8",
+      "id": "8",
       "nom": "Lance de soldat",
       "type": "Arme",
       "attaque": 7,
       "description": "Une lance standard en acier."
     },
     {
-      "id": "w9",
+      "id": "9",
       "nom": "Épée de foudre",
       "type": "Arme",
       "attaque": 22,
       "description": "Une épée magique forgée dans les montagnes."
     },
     {
-      "id": "b1",
+      "id": "10",
       "nom": "Arc de voyageur",
       "type": "Arc",
       "attaque": 5,
       "description": "Un arc simple pour débutants."
     },
     {
-      "id": "b2",
+      "id": "11",
       "nom": "Arc de l'aigle",
       "type": "Arc",
       "attaque": 28,
       "description": "L'arc légendaire de Revali."
     },
     {
-      "id": "b3",
+      "id": "12",
       "nom": "Grand arc de Lynel",
       "type": "Arc",
       "attaque": 32,
       "description": "Tire plusieurs flèches à la fois."
     },
     {
-      "id": "s1",
+      "id": "13",
       "nom": "Bouclier d'Hylia",
       "type": "Bouclier",
       "defense": 90,
       "description": "Le bouclier ultime."
     },
     {
-      "id": "s2",
+      "id": "14",
       "nom": "Bouclier du Mirage",
       "type": "Bouclier",
       "defense": 48,
       "description": "Un bouclier Gerudo orné de pierres."
     },
     {
-      "id": "s3",
+      "id": "15",
       "nom": "Bouclier boko",
       "type": "Bouclier",
       "defense": 3,

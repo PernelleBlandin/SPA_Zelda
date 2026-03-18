@@ -3,6 +3,8 @@ import Home from './views/pages/Home.js';
 import Utils  from "./services/Utils.js";
 import CharacterAll from "./views/pages/CharacterAll.js";
 import CharacterShow from "./views/pages/CharacterShow.js";
+import WeaponAll from "./views/pages/WeaponAll.js";
+import WeaponShow from "./views/pages/WeaponShow.js";
 import About from "./views/pages/About.js";
 
 import Error404 from "./views/pages/Error404.js";
@@ -11,7 +13,10 @@ const routes = {
     "/": Home,
     "/about": About,
     "/personnages": CharacterAll,
-    "/personnages/:id": CharacterShow
+    "/personnages/:id": CharacterShow,
+    "/equipements": WeaponAll,
+    "/equipements/id": WeaponShow
+
 
 };
 
