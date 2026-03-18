@@ -15,8 +15,8 @@ export default class CharacterProvider {
             
             const response = await fetch(`${ENDPOINT}/personnages`, options)
             const json = await response.json();
-            console.log(json.data);
-            return json.data
+           
+            return json
         }catch(err){
             console.error("Error getting doc", err)
         }
@@ -30,7 +30,7 @@ export default class CharacterProvider {
             }
         }
         try{
-            const response = await fetch( `${ENDPOINT}/`+id, options)
+            const response = await fetch( `${ENDPOINT}/personnages/${id}`, options)
             const json = await response.json();
             return json
         }catch(err){
