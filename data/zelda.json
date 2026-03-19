@@ -332,13 +332,16 @@
     }
   ],
   "categories": [
-    { "id": 1, "nom": "Hylien" },
-    { "id": 2, "nom": "Zora" },
-    { "id": 3, "nom": "Goron" },
-    { "id": 4, "nom": "Piaf" },
-    { "id": 5, "nom": "Gerudo" },
-    { "id": 6, "nom": "Sheikah" },
-    { "id": 7, "nom": "Korogu" },
-    { "id": 8, "nom": "Monstre" }
+    { "id": 1, "nom": "Hylien", "icone": ""},
+    { "id": 2, "nom": "Zora", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/zora.webp?raw=true"},
+    { "id": 3, "nom": "Goron", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/goron.webp?raw=true"},
+    { "id": 4, "nom": "Piaf", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/piaf2.webp?raw=true"},
+    { "id": 5, "nom": "Gerudo", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/gerudo2.webp?raw=true"},
+    { "id": 6, "nom": "Sheikah", "icone": "" },
+    { "id": 7, "nom": "Korogu", "icone": "" },
+    { "id": 8, "nom": "Monstre", "icone": "" },
+    { "id": 9, "nom": "Arme", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/epee.webp?raw=true" },
+    { "id": 9, "nom": "Arc", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/arc.webp?raw=true"},
+    { "id": 9, "nom": "Bouclier", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/shield.webp?raw=true"}
   ]
 }
