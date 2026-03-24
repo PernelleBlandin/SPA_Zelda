@@ -1,19 +1,19 @@
 import { ENDPOINT } from '../config.js'
 
-export default class CharacterProvider {
+export default class MonsterProvider {
 
-    static fetchCharacters = async(limit = 5) => {
+    static fetchMonsters = async(limit = 5) => {
         const options = {
             method: 'GET',
             headers:{
                 "Content-Type": "application/json",
             }
         }
-        console.log("fetch characters");
-        console.log(`${ENDPOINT}/personnages`);
+        console.log("fetch monsters");
+        console.log(`${ENDPOINT}/monstres`);
         try{
             
-            const response = await fetch(`${ENDPOINT}/personnages`, options)
+            const response = await fetch(`${ENDPOINT}/monstres`, options)
             const json = await response.json();
            
             return json
@@ -22,7 +22,7 @@ export default class CharacterProvider {
         }
     }
 
-    static getCharacter = async (id)=>{
+    static getMonster = async (id)=>{
         const options = {
             method: 'GET',
             headers:{
@@ -30,7 +30,7 @@ export default class CharacterProvider {
             }
         }
         try{
-            const response = await fetch( `${ENDPOINT}/personnages/${id}`, options)
+            const response = await fetch( `${ENDPOINT}/monstres/${id}`, options)
             const json = await response.json();
             return json
         }catch(err){
