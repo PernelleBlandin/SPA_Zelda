@@ -8,7 +8,7 @@
       "endurance": 1,
       "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/link.webp?raw=true",
-      "equipementIds": ["1", "13", "10"]
+      "equipementIds": ["w1", "b2", "s1"]
     },
     {
       "id": "2",
@@ -18,7 +18,7 @@
       "endurance": 2,
       "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/mipha.webp?raw=true",
-      "equipementIds": ["2"]
+      "equipementIds": ["w2"]
     },
     {
       "id": "3",
@@ -28,7 +28,7 @@
       "endurance": 1,
       "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/daruk.webp?raw=true",
-      "equipementIds": ["3"]
+      "equipementIds": ["w3"]
     },
     {
       "id": "4",

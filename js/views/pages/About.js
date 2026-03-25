@@ -4,7 +4,7 @@ export default class About{
         return ` 
         <section>
             <h2>About</h2>
-            <p> Vous êtes sur la page about </p>
+            <p> Ce site a été réalisé par : Hachelef Asma, Blandin Pernelle </p>
         </section>
         `;
     }
