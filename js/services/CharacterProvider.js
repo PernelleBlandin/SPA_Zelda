@@ -21,7 +21,7 @@ export default class CharacterProvider {
            
             return json.data
         } catch(err) {
-            console.error("Error getting doc", err);
+            console.error("Erreur de chargement", err);
             return [];
             }
     }
@@ -38,7 +38,7 @@ export default class CharacterProvider {
             const json = await response.json();
             return json
         }catch(err){
-            console.log("Error getting doc", err)
+            console.log("Erreur de chargement", err)
         }
     }
 

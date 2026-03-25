@@ -17,11 +17,11 @@ export default class CharacterAll {
 
     async render() {
         let personnages = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
-        console.log("Personnages à afficher :", personnages);
+        console.log(personnages);
        
-        return `
+        let view = `
             <h2>Tous les personnages</h2>
-            <ul id="characters-list-inner">
+            <ul id="list">
                 ${this.renderList(personnages)}
             </ul>
             <div class="pagination-controls">
@@ -30,10 +30,11 @@ export default class CharacterAll {
                 <button id="next-btn">Suivant</button>
             </div>
         `;
+        return view;
     }
 
     async after_render() {
-    const listContainer = document.getElementById('characters-list-inner');
+    const listContainer = document.getElementById('list');
     const pageInfo = document.getElementById('page-info');
     const prevBtn = document.getElementById('prev-btn');
 
