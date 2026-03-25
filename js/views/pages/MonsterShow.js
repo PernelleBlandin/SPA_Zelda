@@ -12,6 +12,8 @@ export default class MonsterShow {
                 <h2>${monster.nom}</h2>
                 <p> ID : ${monster.id}</p>
                 <p>Type : ${monster.type}</p>
+                <p>Type : ${monster.points_de_vie}</p>
+                <p>Type : ${monster.notation}</p>
                 <img class="monstre-pic" src="${monster.image}" alt="Image du monstre ${monster.nom}"/>
             </section>
             `;

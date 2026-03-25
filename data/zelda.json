@@ -6,7 +6,7 @@
       "race": "Hylien",
       "coeurs": 3,
       "endurance": 1,
-      "niveau": 1,
+      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/link.webp?raw=true",
       "equipementIds": ["1", "13", "10"]
     },
@@ -16,7 +16,7 @@
       "race": "Zora",
       "coeurs": 10,
       "endurance": 2,
-      "niveau": 5,
+      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/mipha.webp?raw=true",
       "equipementIds": ["2"]
     },
@@ -26,7 +26,7 @@
       "race": "Goron",
       "coeurs": 15,
       "endurance": 1,
-      "niveau": 5,
+      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/daruk.webp?raw=true",
       "equipementIds": ["3"]
     },
@@ -36,7 +36,7 @@
       "race": "Piaf",
       "coeurs": 8,
       "endurance": 3,
-      "niveau": 5,
+      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/revali.webp?raw=true",
       "equipementIds": ["11"]
     },
@@ -46,7 +46,7 @@
       "race": "Gerudo",
       "coeurs": 12,
       "endurance": 2,
-      "niveau": 5,
+      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/urbosa.webp?raw=true",
       "equipementIds": ["4", "14"]
     },
@@ -56,7 +56,7 @@
       "race": "Hylienne",
       "coeurs": 10,
       "endurance": 2,
-      "niveau": 10,
+      "notation": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/zelda.webp?raw=true",
       "equipementIds": []
     },
@@ -66,7 +66,7 @@
       "race": "Zora",
       "coeurs": 12,
       "endurance": 2,
-      "niveau": 3,
+      "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/sidon.webp?raw=true",
       "equipementIds": ["8"]
     },
@@ -76,7 +76,7 @@
       "race": "Goron",
       "coeurs": 14,
       "endurance": 1,
-      "niveau": 2,
+      "notation": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/yunobo.webp?raw=true",
       "equipementIds": ["3"]
     },
@@ -86,7 +86,7 @@
       "race": "Piaf",
       "coeurs": 10,
       "endurance": 3,
-      "niveau": 3,
+      "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/teba.webp?raw=true",
       "equipementIds": ["10"]
     },
@@ -96,7 +96,7 @@
       "race": "Gerudo",
       "coeurs": 8,
       "endurance": 2,
-      "niveau": 3,
+      "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/riju.webp?raw=true",
       "equipementIds": ["14"]
     },
@@ -106,7 +106,7 @@
       "race": "Sheikah",
       "coeurs": 5,
       "endurance": 2,
-      "niveau": 10,
+      "notation": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/impa.webp?raw=true",
       "equipementIds": []
     },
@@ -116,7 +116,7 @@
       "race": "Sheikah",
       "coeurs": 4,
       "endurance": 1,
-      "niveau": 1,
+      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/paya.webp?raw=true",
       "equipementIds": []
     },
@@ -126,7 +126,7 @@
       "race": "Sheikah",
       "coeurs": 3,
       "endurance": 1,
-      "niveau": 8,
+      "notation": 8,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/faras.webp?raw=true",
       "equipementIds": ["9"]
     },
@@ -136,7 +136,7 @@
       "race": "Hylien",
       "coeurs": 4,
       "endurance": 5,
-      "niveau": 1,
+      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/terry.webp?raw=true",
       "equipementIds": []
     },
@@ -146,7 +146,7 @@
       "race": "Korogu",
       "coeurs": 20,
       "endurance": 1,
-      "niveau": 1,
+      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/noia.webp?raw=true",
       "equipementIds": []
     },
@@ -156,7 +156,7 @@
       "race": "Piaf",
       "coeurs": 6,
       "endurance": 2,
-      "niveau": 4,
+      "notation": 4,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/asarim.webp?raw=true",
       "equipementIds": []
     },
@@ -166,7 +166,7 @@
       "race": "Hylien",
       "coeurs": 15,
       "endurance": 2,
-      "niveau": 10,
+      "notation": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/roam.webp?raw=true",
       "equipementIds": ["8"]
     }
@@ -177,7 +177,7 @@
       "nom": "Bokoblin Rouge",
       "type": "Standard",
       "points_de_vie": 13,
-      "niveau": 1,
+      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/monstres/bokoblin_rouge.webp?raw=true",
       "equipementIds": ["6", "15"]
     },
@@ -186,7 +186,7 @@
       "nom": "Lizalfos Bleu",
       "type": "Aquatique",
       "points_de_vie": 120,
-      "niveau": 2,
+      "notation": 2,
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/blue_lizalfos/image",
       "equipementIds": ["7", "9"]
     },
@@ -195,7 +195,7 @@
       "nom": "Lynel d'Argent",
       "type": "Élite",
       "points_de_vie": 6000,
-      "niveau": 5,
+      "notation": 5,
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/silver_lynel/image",
       "equipementIds": ["5", "12", "13"]
     },
@@ -204,7 +204,7 @@
       "nom": "Moblin",
       "type": "Standard",
       "points_de_vie": 56,
-      "niveau": 1,
+      "notation": 1,
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/moblin/image",
       "equipementIds": ["6"]
     }
