@@ -18,4 +18,16 @@ export default class CharacterAll {
     return view;
     }
 
+
+
+async after_render() {
+    const recherche = document.getElementById("recherche");
+    recherche.addEventListener("input", () => {
+        const input = recherche.value.toLowerCase();
+        console.log("Recherche : " + input);
+
+    
+        })
+    }
+
 }
