@@ -22,7 +22,6 @@ export default class CharacterProvider {
             return json.data
         } catch(err) {
             console.error("Erreur de chargement", err);
-            return [];
             }
     }
 

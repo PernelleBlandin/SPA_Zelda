@@ -47,7 +47,7 @@ export default class CharacterAll {
             pageInfo.textContent = `Page ${this.currentPage}`;
             prevBtn.disabled = (this.currentPage === 1);
         } else {
-            this.currentPage -= direction; // Annule si vide
+            this.currentPage -= direction;
         }
     };
 

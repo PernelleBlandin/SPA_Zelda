@@ -2,7 +2,7 @@ import { ENDPOINT } from '../config.js'
 
 export default class MonsterProvider {
 
-    static fetchMonsters = async(limit = 5) => {
+    static fetchMonsters = async(page = 1, limit = 5) => {
         const options = {
             method: 'GET',
             headers:{
@@ -12,13 +12,12 @@ export default class MonsterProvider {
         console.log("fetch monsters");
         console.log(`${ENDPOINT}/monstres`);
         try{
-            
-            const response = await fetch(`${ENDPOINT}/monstres`, options)
+            const url = `${ENDPOINT}/monstres?_page=${page}&_per_page=${limit}`;
+            const response = await fetch(url, options);
             const json = await response.json();
-           
-            return json
+            return json.data
         }catch(err){
-            console.error("Error getting doc", err)
+            console.error("Erreur de chargement", err)
         }
     }
 
@@ -34,7 +33,7 @@ export default class MonsterProvider {
             const json = await response.json();
             return json
         }catch(err){
-            console.log("Error getting doc", err)
+            console.log("Erreur de chargement", err)
         }
     }
 
