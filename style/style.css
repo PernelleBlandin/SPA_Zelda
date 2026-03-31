@@ -148,22 +148,27 @@ input {
   display: none;
 }
 
-/* changes the color when selected */
-input:checked ~ label {
-  color: red;
+.item-li {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 15px;
+   background: #f8f9fa;
+   margin-bottom: 5px;
+   border-radius: 8px;
 }
 
-#heart{
-   
-   width: 30px;
-   height: 30px;
-   right: 0;
+.heart-checkbox {
+    display: none;
 }
 
+.heart-checkbox + label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+    margin-left: 10px;
+}
 
-/* for styling purpose only */
-label {
-   width: 30px;
-   height: 30px;
-   right: 0;
+.heart-checkbox:checked + label {
+    color: red;
 }
