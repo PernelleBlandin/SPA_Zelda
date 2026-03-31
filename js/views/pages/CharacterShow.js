@@ -1,20 +1,34 @@
 import Utils from '../../services/Utils.js';
 import CharacterProvider from "./../../services/CharacterProvider.js";
+import WeaponProvider from "./../../services/WeaponProvider.js";
 import {cst} from "./../../services/constantes.js";
 
 export default class CharacterShow {
+
+    async getNomEquipements(equipementIds) {
+        let liste_noms = [];
+
+        for(const el of equipementIds){
+
+            let equipement = await WeaponProvider.getWeapon(el);
+            let nom_equipement = " " + equipement.nom;
+            liste_noms.push(nom_equipement);
+        }
+        return liste_noms;
+    }
+
+
     async render (Index) {
         console.log("character show")
-        let request = Utils.parseRequestURL()
+        let request = Utils.parseRequestURL();
         let character = await CharacterProvider.getCharacter(Index);
         console.log(character);
-        console.log("type coeurs", typeof(character.coeurs))
-        let nb_coeurs = character.coeurs
-        let nb_endurance = character.endurance
-        let note = character.notation
+        console.log("type coeurs", typeof(character.coeurs));
+        let nb_coeurs = character.coeurs;
+        let nb_endurance = character.endurance;
 
-
-        
+        let equipements = await this.getNomEquipements(character.equipementIds);
+        console.log("liste nom equip", equipements);
         
         let view = `
             <section>
@@ -26,11 +40,10 @@ export default class CharacterShow {
                 <div class="stats">
                     <p> Cœurs : ${cst["coeurs"].repeat(nb_coeurs)}</p>
                     <p>Endurance : ${cst["goutte"].repeat(nb_endurance)}</p>
-                    <p>Evaluation du personnage ${cst["etoile"].repeat(note)}</p>
                 </div>
 
                 <div class="equipement_perso">
-                    <p>${character.equipementIds}</p>
+                    <p>Equipements : ${equipements}</p>
                 </div>
                 
             </section>
