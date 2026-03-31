@@ -143,3 +143,27 @@ h1, h2 {
    transform: translateX(10px); /* met l'element à gauche dans son bloc*/
    background: #e9ecef;
 }
+
+input {
+  display: none;
+}
+
+/* changes the color when selected */
+input:checked ~ label {
+  color: red;
+}
+
+#heart{
+   
+   width: 30px;
+   height: 30px;
+   right: 0;
+}
+
+
+/* for styling purpose only */
+label {
+   width: 30px;
+   height: 30px;
+   right: 0;
+}

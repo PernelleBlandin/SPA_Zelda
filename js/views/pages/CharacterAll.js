@@ -10,7 +10,9 @@ export default class CharacterAll {
     renderList(personnages) {
         if (!personnages || !Array.isArray(personnages)) return "";
         return personnages.map(
-            personnage => `<li><a href="#/personnages/${personnage.id}">${personnage.nom}</a></li>`
+            personnage => `<li><a href="#/personnages/${personnage.id}">${personnage.nom}</a>
+            <input type= checkbox id= "heart">
+                <label for="heart">&#9829</label></li>`
         ).join('\n');
     }
 
@@ -23,6 +25,7 @@ export default class CharacterAll {
             <h2>Tous les personnages</h2>
             <ul id="list">
                 ${this.renderList(personnages)}
+                
             </ul>
             <div class="pagination-controls">
                 <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
