@@ -31,6 +31,7 @@ header {
 nav ul {
    display: flex;
    justify-content: center;
+   align-items: center;
    list-style: none;
    max-width: 1200px;
    margin: 0 auto;
@@ -60,7 +61,7 @@ nav a:hover {
 
 
 /* --- Contenu Principal --- */
-main {
+main { 
    max-width: 900px;
    margin: 1rem auto; 
    padding: 2rem;
@@ -142,4 +143,47 @@ h1, h2 {
 #main ul li:hover {
    transform: translateX(10px); /* met l'element à gauche dans son bloc*/
    background: #e9ecef;
+}
+
+#recherche_form {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+}
+#recherche_input {
+   padding: 8px 15px;
+   border-radius: 20px;
+   border: 1px solid #ccc;
+   outline: none;
+   font-size: 0.9rem;
+   width: 200px;
+}
+
+
+.search-suggestions {
+   position: absolute;
+   top: 100%; 
+   left: 0;
+   right: 0;
+   z-index: 1000; 
+    
+   max-height: 300px;
+   overflow-y: auto;
+    
+   background-color:  #1b4332; 
+   border: 1px solid #ccc;
+   border-radius: 0 0 5px 5px;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Style pour les items à l'intérieur */
+.search-suggestions div {
+   padding: 10px;
+   color: white;
+   border-bottom: 1px solid rgba(255,255,255,0.1);
+   cursor: pointer;
+}
+
+.search-suggestions div:hover {
+   background-color: rgba(255,255,255,0.1);
 }
