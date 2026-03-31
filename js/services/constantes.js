@@ -1,1 +1,1 @@
-coeurs = "♥"
+export const cst = {coeurs : " ♥ ", goutte : " 🌢 ", etoile : " ★ "}

@@ -1,5 +1,6 @@
 import Utils from '../../services/Utils.js';
 import CharacterProvider from "./../../services/CharacterProvider.js";
+import {cst} from "./../../services/constantes.js";
 
 export default class CharacterShow {
     async render (Index) {
@@ -8,6 +9,12 @@ export default class CharacterShow {
         let character = await CharacterProvider.getCharacter(Index);
         console.log(character);
         console.log("type coeurs", typeof(character.coeurs))
+        let nb_coeurs = character.coeurs
+        let nb_endurance = character.endurance
+        let note = character.notation
+
+
+        
         
         let view = `
             <section>
@@ -17,9 +24,9 @@ export default class CharacterShow {
                 <p>${character.race}</p>
 
                 <div class="stats">
-                    <p> coeurs : ${character.coeurs}</p>
-                    <p>${character.endurance}</p>
-                    <p>${character.notation}</p>
+                    <p> Cœurs : ${cst["coeurs"].repeat(nb_coeurs)}</p>
+                    <p>Endurance : ${cst["goutte"].repeat(nb_endurance)}</p>
+                    <p>Evaluation du personnage ${cst["etoile"].repeat(note)}</p>
                 </div>
 
                 <div class="equipement_perso">
