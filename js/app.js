@@ -29,14 +29,16 @@ const router = async()=>{
     const content = null ||  document.querySelector('#main');
 
     let request = Utils.parseRequestURL();
-
     let parsedURL= (request.resource ? '/'+ request.resource : '/') + (request.id ? '/:id': '')+ (request.verb ? '/'+ request.verb: '');
 
     let pageC = routes[parsedURL] ? routes[parsedURL] :  Error404;
-
     let page= new pageC();
 
     content.innerHTML = await page.render(request.id);
+    if (page.after_render) {
+        await page.after_render();
+    }
+
 }
 
 window.addEventListener("hashchange", router);

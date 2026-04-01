@@ -2,7 +2,7 @@ import { ENDPOINT } from '../config.js'
 
 export default class WeaponProvider {
 
-    static fetchWeapons = async(limit = 5) => {
+    static fetchWeapons = async(page = 5, limit = 6) => {
         const options = {
             method: 'GET',
             headers:{
@@ -12,12 +12,13 @@ export default class WeaponProvider {
         console.log("fetch equipements");
         console.log(`${ENDPOINT}/equipements`);
         try{
-            const response = await fetch(`${ENDPOINT}/equipements`, options)
+            const url = `${ENDPOINT}/equipements?_page=${page}&_per_page=${limit}`;
+            const response = await fetch(url, options);
             const json = await response.json();
-           
-            return json
+            return json.data
+
         }catch(err){
-            console.error("Error getting doc", err)
+            console.error("Erreur de chargement", err)
         }
     }
 
@@ -33,7 +34,7 @@ export default class WeaponProvider {
             const json = await response.json();
             return json
         }catch(err){
-            console.log("Error getting doc", err);;
+            console.log("Erreur de chargement", err);;
         }
     }
 
