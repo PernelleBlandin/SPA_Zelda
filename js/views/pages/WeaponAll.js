@@ -1,3 +1,4 @@
+import NotationProvider from "../../services/NotationProvider.js";
 import WeaponProvider from "../../services/WeaponProvider.js";
 
 export default class WeaponAll {
