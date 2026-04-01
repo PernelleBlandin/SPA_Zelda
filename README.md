@@ -17,3 +17,8 @@ Pour aller sur le json :
 
 
 Pour voir les images, soyez bien connecté à Internet.
+
+
+description de ce que fait chaque module dans readme et dans le module 
+Comprendre comment on a organisé le code
+partie mise en production avec élément fourni par M.COCHARD

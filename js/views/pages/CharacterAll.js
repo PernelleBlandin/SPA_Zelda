@@ -34,6 +34,16 @@ export default class CharacterAll {
     }
 
     async after_render() {
+    //recherche
+    const recherche = document.getElementById("recherche");
+    recherche.addEventListener("input", () => {
+        const input = recherche.value.toLowerCase();
+        console.log("Recherche : " + input);
+
+    
+        })
+  
+    //Pagination
     const listContainer = document.getElementById('list');
     const pageInfo = document.getElementById('page-info');
     const prevBtn = document.getElementById('prev-btn');
