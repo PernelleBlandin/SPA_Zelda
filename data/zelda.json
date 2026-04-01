@@ -215,7 +215,7 @@
       "nom": "Épée de légende",
       "type": "Arme",
       "puissance": 30,
-      "notation": [4, 5, 3],
+      "notation": [4, 5, 3, 2.5],
       "description": "L'épée qui repousse le mal.",
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/master_sword/image"
     },

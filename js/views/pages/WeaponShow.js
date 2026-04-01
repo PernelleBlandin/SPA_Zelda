@@ -1,17 +1,19 @@
 import Utils from '../../services/Utils.js'
 import WeaponProvider from "./../../services/WeaponProvider.js";
-import NotationProvider from "../../services/NotationProvider.js";
 
 export default class WeaponShow {
 
-    async getNotations(Index){
-        let moy = 0;
-        let equipement = await WeaponProvider.getWeapon(Index);
-        for (const el of equipement.notation){
-            moy += el;
+    async getNotations(notation){
+        let sum_note = 0;
+        let equipement = await WeaponProvider.getWeapon(notation);
+
+        for (const el of notation){
+            console.log("type note dans liste", el, typeof(el));
+            sum_note += el;
 
         }
-        return moy / equipement.notation.length;   
+        let moy = sum_note / notation.length
+        return moy;   
     }
 
 
@@ -23,7 +25,7 @@ export default class WeaponShow {
         let equipement = await WeaponProvider.getWeapon(Index);
         console.log(equipement);
  
-        notations = await this.getNotations(Index);
+        let notations = await this.getNotations(equipement.notation);
         console.log("notation; ", notations);
         
         let view = `
