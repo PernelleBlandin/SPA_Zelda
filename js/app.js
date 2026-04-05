@@ -11,6 +11,7 @@ import About from "./views/pages/About.js";
 import Favorite from './views/pages/Favorite.js';
 
 import Error404 from "./views/pages/Error404.js";
+import SearchProvider from "./services/SearchProvider.js";
 
 const routes = {
     "/": Home,
@@ -45,3 +46,35 @@ const router = async()=>{
 window.addEventListener("hashchange", router);
 
 window.addEventListener("load",router);
+
+
+const recherche = document.getElementById("recherche_input");
+
+
+recherche.addEventListener("input", async() => {
+    const res = document.getElementById("recherche_res");
+    const input = recherche.value.toLowerCase();
+    console.log("Recherche : " + input);
+    console.log("res"+ res)
+
+    if(input.length<2){
+        res.innerHTML = "";
+        return;
+    }
+    const matches = await SearchProvider.searchAll(input);
+    
+
+    res.innerHTML = matches.map(item => `
+        <div class="search-item">
+            <a href="#/${item.type}/${item.id}">
+                ${item.nom} <small>(${item.type})</small>
+            </a>
+        </div>
+    `).join("");
+    });
+    document.addEventListener("click", (e) => {
+        if (!document.getElementById("recherche_form").contains(e.target)) {
+            res.innerHTML = "";
+        }
+    
+});
