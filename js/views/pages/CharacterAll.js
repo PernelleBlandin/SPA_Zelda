@@ -6,6 +6,7 @@ export default class CharacterAll {
     constructor() {
         this.currentPage = 1;
         this.limit = 6;
+        this.totalPages = 1;
     }
 
 
@@ -40,18 +41,20 @@ export default class CharacterAll {
 
     async render() {
         let personnages = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
+        this.totalPages= personnages.pages;
+        const personnagesData = personnages.data;
         console.log(personnages);
        
         let view = `
             <h2>Tous les personnages</h2>
             <ul id="list">
-                ${this.renderList(personnages)}
+                ${this.renderList(personnagesData)}
                 
             </ul>
             <div class="pagination-controls">
                 <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
-                <span id="page-info">Page ${this.currentPage}</span>
-                <button id="next-btn">Suivant</button>
+                <span id="page-info">Page ${this.currentPage} sur ${this.totalPages}</span>
+                <button id="next-btn"  ${this.currentPage >= this.totalPages ? 'disabled' : ''}>Suivant</button>
             </div>
         `;
         return view;
@@ -66,6 +69,7 @@ export default class CharacterAll {
     const listContainer = document.getElementById('list');
     const pageInfo = document.getElementById('page-info');
     const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
 
     // Gestion des favoris
     const favs= () => {
@@ -85,13 +89,18 @@ export default class CharacterAll {
     
     // Gestion Pagination
     const updatePage = async (direction) => {
-        this.currentPage += direction;
-        const data = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
-       
+        const nextStep = this.currentPage + direction;
+        if (nextStep < 1 || nextStep > this.totalPages) return;
+
+        this.currentPage = nextStep;
+        const response = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
+        const data = response.data;
+
         if (data.length > 0) {
             listContainer.innerHTML = this.renderList(data);
-            pageInfo.textContent = `Page ${this.currentPage}`;
+            pageInfo.textContent = `Page ${this.currentPage} sur ${this.totalPages}`;
             prevBtn.disabled = (this.currentPage === 1);
+            nextBtn.disabled = (this.currentPage >= this.totalPages);
             favs();
         } else {
             this.currentPage -= direction;
