@@ -1,57 +1,57 @@
-import CharacterProvider from "../../services/CharacterProvider.js";
+import WeaponProvider from "../../services/WeaponProvider.js";
 import FavoriteProvider from "../../services/FavoriteProvider.js";
 
-export default class CharacterAll {
+export default class WeaponAll {
     constructor() {
         this.currentPage = 1;
         this.limit = 6;
         this.totalPages = 1;
     }
 
-    
-    renderList(personnages) {
-        if (!personnages || !Array.isArray(personnages)) return "";
-        return personnages.map(perso => {
-            let estFavori = FavoriteProvider.isFavorite(perso.id, 'personnages');
+    renderList(equipements) {
+        if (!equipements || !Array.isArray(equipements)) return "";
+
+        return equipements.map(eq => {
+            let estFavori = FavoriteProvider.isFavorite(eq.id, 'equipements');
             return `
-            <li class="item-li">
-                <div class="item-content">
-                    <a href="#/personnages/${perso.id}">${perso.nom}</a>
-                </div>
-                <div class="fav-container">
-                    <input type="checkbox" id="heart-${perso.id}" class="heart-checkbox" 
-                           data-id="${perso.id}" data-nom="${perso.nom}" ${estFavori ? 'checked' : ''}>
-                    <label for="heart-${perso.id}" class="heart-label">&#9829;</label>
-                </div>
-            </li>`;
+                <li class="item-li">
+                    <div class="item-content">
+                        <a href="#/equipements/${eq.id}">${eq.nom}</a>
+                    </div>
+                    <div class="fav-container">
+                        <input type="checkbox" id="heart-${eq.id}" class="heart-checkbox" 
+                               data-id="${eq.id}" data-nom="${eq.nom}" ${estFavori ? 'checked' : ''}>
+                        <label for="heart-${eq.id}" class="heart-label">&#9829;</label>
+                    </div>
+                </li>`;
         }).join("");
     }
 
     favorisEvent() {
         const checkboxes = document.querySelectorAll('.heart-checkbox');
         checkboxes.forEach(cb => {
-            cb.onclick = () => {
+            cb.onclick = (e) => {
                 const itemData = {
                     id: cb.dataset.id,
                     nom: cb.dataset.nom
                 };
-                FavoriteProvider.toggleFavorite(itemData, 'personnages');
+                FavoriteProvider.toggleFavorite(itemData, 'equipements');
             };
         });
     }
 
-
-    async render() {
-        const totalPersos = await CharacterProvider.countTotalCharacters();
-        this.totalPages = Math.ceil(totalPersos / this.limit);
-        const personnagesData = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
-
-        return `
-            <h2>Tous les personnages</h2>
-            <ul id="characters-list"> ${this.renderList(personnagesData)}
+    async render () {
+        const total = await WeaponProvider.countTotalWeapons();
+        this.totalPages = Math.ceil(total / this.limit);
+        const equipements = await WeaponProvider.fetchWeapons(this.currentPage, this.limit);
+        console.log(equipements);
+        let view = `
+        <h2>Tous les équipements</h2>
+        <ul id="list">
+                ${this.renderList(equipements)}
             </ul>
             <div class="pagination-controls">
-                <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
+                <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>     
                 <div class="page-selector">
                     Page 
                     <input type="number" id="page-input" 
@@ -63,10 +63,12 @@ export default class CharacterAll {
                 <button id="next-btn" ${this.currentPage >= this.totalPages ? 'disabled' : ''}>Suivant</button>
             </div>
         `;
+        return view;
     }
 
+
     async after_render() {
-        const listContainer = document.getElementById('characters-list');
+        const listContainer = document.getElementById('list');
         const pageInput = document.getElementById('page-input');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
@@ -78,8 +80,9 @@ export default class CharacterAll {
                 if (pageInput) pageInput.value = this.currentPage;
                 return;
             }
+
             this.currentPage = newPage;
-            const data = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
+            const data = await WeaponProvider.fetchWeapons(this.currentPage, this.limit);
 
             if (listContainer && data) {
                 listContainer.innerHTML = this.renderList(data);

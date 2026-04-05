@@ -15,3 +15,10 @@ Pour aller sur le json :
     http://localhost:3000/personnages
     http://localhost:3000/equipements
 
+
+Pour voir les images, soyez bien connecté à Internet.
+
+
+description de ce que fait chaque module dans readme et dans le module 
+Comprendre comment on a organisé le code
+partie mise en production avec élément fourni par M.COCHARD
