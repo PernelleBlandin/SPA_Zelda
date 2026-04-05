@@ -4,7 +4,7 @@ TP noté de complément web S4
 ## Description générale du projet  
 
 Ce projet a été réalisé dans le cadre du module R4.10 Complément web.
-L'objectif est de concevoir une Single Page Application (SPA) en javascript en utilisant une API via json-server.
+L'objectif est de concevoir une Single Page Application (SPA) en JavaScript en utilisant une API via json-server.
 Le projet permet de découvrir l'univers du jeu Zelda Breath of the Wild : personnages, équipements et monstres. Il est possible de rechercher un équipement, un personnage ou encore un monstre, de mettre en favoris des personnages et des équipements. Il est également possible de noter les équipements.
 
 ## Composition de l'équipe de développeuses
@@ -73,9 +73,10 @@ Le code est structuré avec différents modules, pour respecter les principes de
 - app.js : Initialise le routeur et gèle les évenements globaux (recherche, clics).
 - services/ : Contient la logique d'accès aux données.
     - Utils.js: Fonctions utilitaires (parsing d'URL).
-    - Les Providers (ex: WeaponProvider.js): Gère les appels fetch vers le json-server.
+    - Les Providers (ex: WeaponProvider.js) : Des classes statiques qui gèrent les appels fetch vers le json-server. Ils permettent de centraliser la logique des opération de CRUD. Le FavoriteProvider.js utilise le LocalStorage, et permet à l'utilisateur de retrouver ses favoris même après avoir fermé le navigateur.
 - views/ : Contient les composants de rendu HTML
     - pages/ : Chaque fichier (ex: Home.js ou WeaponShow.js) possède une méthode `render()`pour le HTML et certains ont une méthode `after_render()` pour gérer l'intéractivité.
+    - Pagination : Implémentée côté client avec calcul dynamique des pages en fonction de la taille totale des données récupérées depuis le serveur pour chaque type (personnage, équipement, monstre). La pagination est dans les fichiers views XAll.js, mais le calcul total des éléments est dans les Providers.
   
 ## Bundle
 Afin de déployer l'application en production avec un bundler nous avons fait le choix de choisir Vite.
@@ -103,6 +104,17 @@ partie mise en production avec élément fourni par M.COCHARD
 
 ### Home
 Une brève description du site et de l'univers du celui-ci.
+
+### Barre de recherche
+Vous pouvez chercher un personnage, une arme ou un monstre grâce à la barre de recherche. Cela recherche caractère par caractère, en vérifiant ceux qui se suivent. 
+ex : 
+- D --> Daruk
+- d --> Daruk
+- aru --> Daruk
+- ark --> Rien
+
+S'affiche au fur et à mesure que vous taper dans la barre, les match correpondant, sur lesquels vous pouvez cliquer pour voir leur détail.
+
 
 ### Personnages
 Vous pouvez accéder à la liste de tous les personnages en cliquant sur l'onglet 'Personnages' dans la barre de navigation.
