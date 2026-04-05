@@ -1,5 +1,5 @@
 import Utils from '../../services/Utils.js'
-import WeaponProvider from "./../../services/WeaponProvider.js";
+import WeaponProvider from "../../services/WeaponProvider.js";
 
 export default class WeaponShow {
 
