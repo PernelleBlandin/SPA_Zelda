@@ -8,6 +8,7 @@ export default class CharacterAll {
         this.totalPages = 1;
     }
 
+    
     renderList(personnages) {
         if (!personnages || !Array.isArray(personnages)) return "";
         return personnages.map(perso => {
@@ -26,6 +27,20 @@ export default class CharacterAll {
         }).join("");
     }
 
+    favorisEvent() {
+        const checkboxes = document.querySelectorAll('.heart-checkbox');
+        checkboxes.forEach(cb => {
+            cb.onclick = () => {
+                const itemData = {
+                    id: cb.dataset.id,
+                    nom: cb.dataset.nom
+                };
+                FavoriteProvider.toggleFavorite(itemData, 'personnages');
+            };
+        });
+    }
+
+
     async render() {
         const totalPersos = await CharacterProvider.countTotalCharacters();
         this.totalPages = Math.ceil(totalPersos / this.limit);
@@ -37,7 +52,14 @@ export default class CharacterAll {
             </ul>
             <div class="pagination-controls">
                 <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
-                <span id="page-info">Page ${this.currentPage} sur ${this.totalPages}</span>
+                <div class="page-selector">
+                    Page 
+                    <input type="number" id="page-input" 
+                           value="${this.currentPage}" 
+                           min="1" max="${this.totalPages}" 
+                           style="width: 50px; text-align: center;"> 
+                    sur ${this.totalPages}
+                </div>
                 <button id="next-btn" ${this.currentPage >= this.totalPages ? 'disabled' : ''}>Suivant</button>
             </div>
         `;
@@ -45,28 +67,33 @@ export default class CharacterAll {
 
     async after_render() {
         const listContainer = document.getElementById('characters-list');
-        const pageInfo = document.getElementById('page-info');
+        const pageInput = document.getElementById('page-input');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
 
-        const updatePage = async (direction) => {
-            const nextStep = this.currentPage + direction;
-            if (nextStep < 1 || nextStep > this.totalPages) return;
+        this.favorisEvent();
 
-            this.currentPage = nextStep;
+        const updatePage = async (newPage) => {
+            if (newPage < 1 || newPage > this.totalPages) {
+                if (pageInput) pageInput.value = this.currentPage;
+                return;
+            }
+            this.currentPage = newPage;
             const data = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
 
             if (listContainer && data) {
                 listContainer.innerHTML = this.renderList(data);
-                pageInfo.textContent = `Page ${this.currentPage} sur ${this.totalPages}`;
-                
-
+                if (pageInput) pageInput.value = this.currentPage;
                 prevBtn.disabled = (this.currentPage === 1);
                 nextBtn.disabled = (this.currentPage >= this.totalPages);
+                this.favorisEvent();
             }
         };
 
-        if (nextBtn) nextBtn.onclick = () => updatePage(1);
-        if (prevBtn) prevBtn.onclick = () => updatePage(-1);
+        if (pageInput) {
+            pageInput.onchange = (e) => updatePage(parseInt(e.target.value));
+        }
+        if (nextBtn) nextBtn.onclick = () => updatePage(this.currentPage + 1);
+        if (prevBtn) prevBtn.onclick = () => updatePage(this.currentPage - 1);
     }
 }

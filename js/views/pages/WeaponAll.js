@@ -60,7 +60,6 @@ export default class WeaponAll {
                            style="width: 50px; text-align: center;"> 
                     sur ${this.totalPages}
                 </div>
-
                 <button id="next-btn" ${this.currentPage >= this.totalPages ? 'disabled' : ''}>Suivant</button>
             </div>
         `;
