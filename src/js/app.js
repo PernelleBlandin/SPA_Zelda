@@ -12,6 +12,7 @@ import Favorite from './views/pages/Favorite.js';
 
 import Error404 from "./views/pages/Error404.js";
 import SearchProvider from "./services/SearchProvider.js";
+import '../style/style.css';
 
 const routes = {
     "/": Home,
