@@ -5,40 +5,45 @@ export default class WeaponAll {
     constructor() {
         this.currentPage = 1;
         this.limit = 6;
+        this.totalPages = 1;
     }
 
     renderList(equipements) {
         if (!equipements || !Array.isArray(equipements)) return "";
 
-        let htmlResultat = "";
-        for (let i = 0; i < equipements.length; i++) {
-            let eq = equipements[i];
-            let estFavori = FavoriteProvider.isFavorite(eq.id,'equipements');
-            htmlResultat += `
+        return equipements.map(eq => {
+            let estFavori = FavoriteProvider.isFavorite(eq.id, 'equipements');
+            return `
                 <li class="item-li">
-                <div class="item-content">
-                    <a href="#/equipements/${eq.id}">${eq.nom}</a>
-                </div>
-                <div class="fav-container">
-                    <input type="checkbox" 
-                           id="heart-${eq.id}" 
-                           class="heart-checkbox" 
-                           data-id="${eq.id}" 
-                           data-nom="${eq.nom}"
-                           ${estFavori ? 'checked' : ''}>
-                    <label for="heart-${eq.id}" class="heart-label">&#9829;</label>
-                </div>
-            </li>`;
-        }
-        return htmlResultat;
+                    <div class="item-content">
+                        <a href="#/equipements/${eq.id}">${eq.nom}</a>
+                    </div>
+                    <div class="fav-container">
+                        <input type="checkbox" id="heart-${eq.id}" class="heart-checkbox" 
+                               data-id="${eq.id}" data-nom="${eq.nom}" ${estFavori ? 'checked' : ''}>
+                        <label for="heart-${eq.id}" class="heart-label">&#9829;</label>
+                    </div>
+                </li>`;
+        }).join("");
+    }
 
-        // return equipements.map(
-        //     equipement => `<li><a href="#/equipements/${equipement.id}">${equipement.nom}</a></li>`
-        // ).join('\n');
+    favorisEvent() {
+        const checkboxes = document.querySelectorAll('.heart-checkbox');
+        checkboxes.forEach(cb => {
+            cb.onclick = (e) => {
+                const itemData = {
+                    id: cb.dataset.id,
+                    nom: cb.dataset.nom
+                };
+                FavoriteProvider.toggleFavorite(itemData, 'equipements');
+            };
+        });
     }
 
     async render () {
-        let equipements = await WeaponProvider.fetchWeapons(this.currentPage, this.limit);
+        const total = await WeaponProvider.countTotalWeapons();
+        this.totalPages = Math.ceil(total / this.limit);
+        const equipements = await WeaponProvider.fetchWeapons(this.currentPage, this.limit);
         console.log(equipements);
         let view = `
         <h2>Tous les equipements</h2>
@@ -47,11 +52,11 @@ export default class WeaponAll {
             </ul>
             <div class="pagination-controls">
                 <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
-                <span id="page-info">Page ${this.currentPage}</span>
-                <button id="next-btn">Suivant</button>
+                <span id="page-info">Page ${this.currentPage} sur ${this.totalPages}</span>
+                <button id="next-btn" ${this.currentPage >= this.totalPages ? 'disabled' : ''}>Suivant</button>
             </div>
         `;
-    return view;
+        return view;
     }
 
 
@@ -59,39 +64,27 @@ export default class WeaponAll {
         const listContainer = document.getElementById('list');
         const pageInfo = document.getElementById('page-info');
         const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
 
-        const setupFavListeners = () => {
-            let checkboxes = document.querySelectorAll('.heart-checkbox');
-            for (let j = 0; j < checkboxes.length; j++) {
-                checkboxes[j].addEventListener('change', function(event) {
-                    let checkbox = event.target;
-                    let itemData = {
-                        id: checkbox.getAttribute('data-id'),
-                        nom: checkbox.getAttribute('data-nom')
-                    };
-                    FavoriteProvider.toggleFavorite(itemData, 'equipements');
-                });
-            }
-        };
-    
-    
+        this.favorisEvent();
+
         const updatePage = async (direction) => {
-            this.currentPage += direction;
+            const nextStep = this.currentPage + direction;
+            if (nextStep < 1 || nextStep > this.totalPages) return;
+
+            this.currentPage = nextStep;
             const data = await WeaponProvider.fetchWeapons(this.currentPage, this.limit);
-           
-            if (data.length > 0) {
+
+            if (listContainer && data) {
                 listContainer.innerHTML = this.renderList(data);
-                pageInfo.textContent = `Page ${this.currentPage}`;
+                pageInfo.textContent = `Page ${this.currentPage} sur ${this.totalPages}`;
                 prevBtn.disabled = (this.currentPage === 1);
-                setupFavListeners();
-            } else {
-                this.currentPage -= direction;
+                nextBtn.disabled = (this.currentPage >= this.totalPages);
+                this.favorisEvent();
             }
         };
-    
-        document.getElementById('next-btn').addEventListener('click', () => updatePage(1));
-        document.getElementById('prev-btn').addEventListener('click', () => updatePage(-1));
-        setupFavListeners();    
-    }
 
+        if (nextBtn) nextBtn.onclick = () => updatePage(1);
+        if (prevBtn) prevBtn.onclick = () => updatePage(-1);
+    }
 }

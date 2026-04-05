@@ -55,5 +55,16 @@ export default class WeaponProvider {
         }
     }
 
+
+    static countTotalWeapons = async () => {
+        try {
+            const response = await fetch(`${ENDPOINT}/equipements`);
+            const json = await response.json();
+            return json.length;
+        } catch (err) {
+            console.error("Erreur comptage armes", err);
+        }
+    }
+
     
 }

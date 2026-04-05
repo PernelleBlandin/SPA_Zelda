@@ -37,5 +37,14 @@ export default class MonsterProvider {
         }
     }
 
+    static countTotalMonsters = async () => {
+        try {
+            const response = await fetch(`${ENDPOINT}/monstres`);
+            const json = await response.json();
+            return json.length;
+        } catch (err) {
+            console.error("Erreur comptage monstres", err);
+        }
+    }
     
 }
