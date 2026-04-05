@@ -8,8 +8,10 @@ import WeaponShow from "./views/pages/WeaponShow.js";
 import MonsterAll from "./views/pages/MonsterAll.js";
 import MonsterShow from "./views/pages/MonsterShow.js";
 import About from "./views/pages/About.js";
+import Favorite from './views/pages/Favorite.js';
 
 import Error404 from "./views/pages/Error404.js";
+import SearchProvider from "./services/SearchProvider.js";
 
 const routes = {
     "/": Home,
@@ -19,7 +21,8 @@ const routes = {
     "/equipements": WeaponAll,
     "/equipements/:id": WeaponShow,
     "/monstres": MonsterAll,
-    "/monstres/:id": MonsterShow
+    "/monstres/:id": MonsterShow,
+    "/favoris": Favorite
 
 };
 
@@ -28,11 +31,9 @@ const router = async()=>{
     const content = null ||  document.querySelector('#main');
 
     let request = Utils.parseRequestURL();
-
     let parsedURL= (request.resource ? '/'+ request.resource : '/') + (request.id ? '/:id': '')+ (request.verb ? '/'+ request.verb: '');
 
     let pageC = routes[parsedURL] ? routes[parsedURL] :  Error404;
-
     let page= new pageC();
 
     content.innerHTML = await page.render(request.id);
@@ -44,3 +45,35 @@ const router = async()=>{
 window.addEventListener("hashchange", router);
 
 window.addEventListener("load",router);
+
+
+const recherche = document.getElementById("recherche_input");
+
+
+recherche.addEventListener("input", async() => {
+    const res = document.getElementById("recherche_res");
+    const input = recherche.value.toLowerCase();
+    console.log("Recherche : " + input);
+    console.log("res"+ res)
+
+    if(input.length<2){
+        res.innerHTML = "";
+        return;
+    }
+    const matches = await SearchProvider.searchAll(input);
+    
+
+    res.innerHTML = matches.map(item => `
+        <div class="search-item">
+            <a href="#/${item.type}/${item.id}">
+                ${item.nom} <small>(${item.type})</small>
+            </a>
+        </div>
+    `).join("");
+    });
+    document.addEventListener("click", (e) => {
+        if (!document.getElementById("recherche_form").contains(e.target)) {
+            res.innerHTML = "";
+        }
+    
+});
