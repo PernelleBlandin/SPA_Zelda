@@ -6,7 +6,6 @@
       "race": "Hylien",
       "coeurs": 3,
       "endurance": 1,
-      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/link.webp?raw=true",
       "equipementIds": [
         "w1",
@@ -20,7 +19,6 @@
       "race": "Zora",
       "coeurs": 10,
       "endurance": 2,
-      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/mipha.webp?raw=true",
       "equipementIds": [
         "w2"
@@ -32,7 +30,6 @@
       "race": "Goron",
       "coeurs": 15,
       "endurance": 1,
-      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/daruk.webp?raw=true",
       "equipementIds": [
         "w3"
@@ -44,7 +41,6 @@
       "race": "Piaf",
       "coeurs": 8,
       "endurance": 3,
-      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/revali.webp?raw=true",
       "equipementIds": [
         "b2"
@@ -56,7 +52,6 @@
       "race": "Gerudo",
       "coeurs": 12,
       "endurance": 2,
-      "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/urbosa.webp?raw=true",
       "equipementIds": [
         "w4",
@@ -69,7 +64,6 @@
       "race": "Hylienne",
       "coeurs": 10,
       "endurance": 2,
-      "notation": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/zelda.webp?raw=true",
       "equipementIds": []
     },
@@ -79,7 +73,6 @@
       "race": "Zora",
       "coeurs": 12,
       "endurance": 2,
-      "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/sidon.webp?raw=true",
       "equipementIds": [
         "w8"
@@ -91,7 +84,6 @@
       "race": "Goron",
       "coeurs": 14,
       "endurance": 1,
-      "notation": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/yunobo.webp?raw=true",
       "equipementIds": [
         "s3"
@@ -103,7 +95,6 @@
       "race": "Piaf",
       "coeurs": 10,
       "endurance": 3,
-      "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/teba.webp?raw=true",
       "equipementIds": [
         "b1"
@@ -115,7 +106,6 @@
       "race": "Gerudo",
       "coeurs": 8,
       "endurance": 2,
-      "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/riju.webp?raw=true",
       "equipementIds": [
         "s3"
@@ -127,7 +117,6 @@
       "race": "Sheikah",
       "coeurs": 5,
       "endurance": 2,
-      "notation": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/impa.webp?raw=true",
       "equipementIds": []
     },
@@ -137,7 +126,6 @@
       "race": "Sheikah",
       "coeurs": 4,
       "endurance": 1,
-      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/paya.webp?raw=true",
       "equipementIds": []
     },
@@ -147,7 +135,6 @@
       "race": "Sheikah",
       "coeurs": 3,
       "endurance": 1,
-      "notation": 8,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/faras.webp?raw=true",
       "equipementIds": [
         "w9"
@@ -159,7 +146,6 @@
       "race": "Hylien",
       "coeurs": 4,
       "endurance": 5,
-      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/terry.webp?raw=true",
       "equipementIds": []
     },
@@ -169,7 +155,6 @@
       "race": "Korogu",
       "coeurs": 20,
       "endurance": 1,
-      "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/noia.webp?raw=true",
       "equipementIds": []
     },
@@ -179,7 +164,6 @@
       "race": "Piaf",
       "coeurs": 6,
       "endurance": 2,
-      "notation": 4,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/asarim.webp?raw=true",
       "equipementIds": []
     },
@@ -189,7 +173,6 @@
       "race": "Hylien",
       "coeurs": 15,
       "endurance": 2,
-      "notation": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/roam.webp?raw=true",
       "equipementIds": [
         "w8"

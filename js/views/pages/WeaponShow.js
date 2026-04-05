@@ -46,15 +46,12 @@ export default class WeaponShow {
 
     async render (Index) {
         console.log("weapon show")
-        let request = Utils.parseRequestURL()
         let equipement = await WeaponProvider.getWeapon(Index);
         console.log(equipement);
  
         let notations = await this.getNotations(equipement.notation);
         console.log("notation; ", notations);
-        const noteInput = document.querySelector("#notation");
-        console.log("note en input", noteInput);
-        
+       
         let view = `
             <section>
                 <h2>${equipement.nom}</h2>
