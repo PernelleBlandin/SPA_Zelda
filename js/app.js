@@ -8,6 +8,7 @@ import WeaponShow from "./views/pages/WeaponShow.js";
 import MonsterAll from "./views/pages/MonsterAll.js";
 import MonsterShow from "./views/pages/MonsterShow.js";
 import About from "./views/pages/About.js";
+import Favorite from './views/pages/Favorite.js';
 
 import Error404 from "./views/pages/Error404.js";
 import SearchProvider from "./services/SearchProvider.js";
@@ -20,7 +21,8 @@ const routes = {
     "/equipements": WeaponAll,
     "/equipements/:id": WeaponShow,
     "/monstres": MonsterAll,
-    "/monstres/:id": MonsterShow
+    "/monstres/:id": MonsterShow,
+    "/favoris": Favorite
 
 };
 

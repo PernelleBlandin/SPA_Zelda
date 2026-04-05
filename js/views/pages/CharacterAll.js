@@ -1,4 +1,5 @@
 import CharacterProvider from "../../services/CharacterProvider.js";
+import FavoriteProvider from "../../services/FavoriteProvider.js";
 
 export default class CharacterAll {
     constructor() {
@@ -9,9 +10,30 @@ export default class CharacterAll {
 
     renderList(personnages) {
         if (!personnages || !Array.isArray(personnages)) return "";
-        return personnages.map(
-            personnage => `<li><a href="#/personnages/${personnage.id}">${personnage.nom}</a></li>`
-        ).join('\n');
+        let htmlResultat = "";
+    
+        for (let i = 0; i < personnages.length; i++) {
+            let perso = personnages[i];
+            let estFavori = FavoriteProvider.isFavorite(perso.id, 'personnages');
+
+        htmlResultat += `
+            <li class="item-li">
+                <div class="item-content">
+                    <a href="#/personnages/${perso.id}">${perso.nom}</a>
+                </div>
+                <div class="fav-container">
+                    <input type="checkbox" 
+                           id="heart-${perso.id}" 
+                           class="heart-checkbox" 
+                           data-id="${perso.id}" 
+                           data-nom="${perso.nom}"
+                           ${estFavori ? 'checked' : ''}>
+                    <label for="heart-${perso.id}" class="heart-label">&#9829;</label>
+                </div>
+            </li>`;
+    }
+    
+    return htmlResultat;
     }
 
 
@@ -23,6 +45,7 @@ export default class CharacterAll {
             <h2>Tous les personnages</h2>
             <ul id="list">
                 ${this.renderList(personnages)}
+                
             </ul>
             <div class="pagination-controls">
                 <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
@@ -48,6 +71,19 @@ export default class CharacterAll {
     const pageInfo = document.getElementById('page-info');
     const prevBtn = document.getElementById('prev-btn');
 
+    // Gestion des favoris
+    let checkboxes = document.querySelectorAll('.heart-checkbox');
+    for (let j = 0; j < checkboxes.length; j++) {
+        checkboxes[j].addEventListener('change', function(event) {
+            let checkbox = event.target;
+            let itemData = {
+                id: checkbox.getAttribute('data-id'),
+                nom: checkbox.getAttribute('data-nom')
+            };
+            FavoriteProvider.toggleFavorite(itemData, 'personnages');
+        });
+    }
+    // Gestion Pagination
     const updatePage = async (direction) => {
         this.currentPage += direction;
         const data = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);

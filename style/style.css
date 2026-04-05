@@ -145,6 +145,33 @@ h1, h2 {
    background: #e9ecef;
 }
 
+input {
+  display: none;
+}
+
+.item-li {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 15px;
+   background: #f8f9fa;
+   margin-bottom: 5px;
+   border-radius: 8px;
+}
+
+.heart-checkbox {
+    display: none;
+}
+
+.heart-checkbox + label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+    margin-left: 10px;
+}
+
+.heart-checkbox:checked + label {
+    color: red;
 #recherche_form {
    position: relative;
    display: flex;

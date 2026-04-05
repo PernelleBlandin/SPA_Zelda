@@ -1,4 +1,5 @@
 import WeaponProvider from "../../services/WeaponProvider.js";
+import FavoriteProvider from "../../services/FavoriteProvider.js";
 
 export default class WeaponAll {
     constructor() {
@@ -8,9 +9,32 @@ export default class WeaponAll {
 
     renderList(equipements) {
         if (!equipements || !Array.isArray(equipements)) return "";
-        return equipements.map(
-            equipement => `<li><a href="#/equipements/${equipement.id}">${equipement.nom}</a></li>`
-        ).join('\n');
+
+        let htmlResultat = "";
+        for (let i = 0; i < equipements.length; i++) {
+            let eq = equipements[i];
+            let estFavori = FavoriteProvider.isFavorite(eq.id,'equipements');
+            htmlResultat += `
+                <li class="item-li">
+                <div class="item-content">
+                    <a href="#/equipements/${eq.id}">${eq.nom}</a>
+                </div>
+                <div class="fav-container">
+                    <input type="checkbox" 
+                           id="heart-${eq.id}" 
+                           class="heart-checkbox" 
+                           data-id="${eq.id}" 
+                           data-nom="${eq.nom}"
+                           ${estFavori ? 'checked' : ''}>
+                    <label for="heart-${eq.id}" class="heart-label">&#9829;</label>
+                </div>
+            </li>`;
+        }
+        return htmlResultat;
+
+        // return equipements.map(
+        //     equipement => `<li><a href="#/equipements/${equipement.id}">${equipement.nom}</a></li>`
+        // ).join('\n');
     }
 
     async render () {
@@ -35,6 +59,21 @@ export default class WeaponAll {
         const listContainer = document.getElementById('list');
         const pageInfo = document.getElementById('page-info');
         const prevBtn = document.getElementById('prev-btn');
+
+        const setupFavListeners = () => {
+            let checkboxes = document.querySelectorAll('.heart-checkbox');
+            for (let j = 0; j < checkboxes.length; j++) {
+                checkboxes[j].addEventListener('change', function(event) {
+                    let checkbox = event.target;
+                    let itemData = {
+                        id: checkbox.getAttribute('data-id'),
+                        nom: checkbox.getAttribute('data-nom')
+                    };
+                    FavoriteProvider.toggleFavorite(itemData, 'equipements');
+                });
+            }
+        };
+    
     
         const updatePage = async (direction) => {
             this.currentPage += direction;
@@ -44,6 +83,7 @@ export default class WeaponAll {
                 listContainer.innerHTML = this.renderList(data);
                 pageInfo.textContent = `Page ${this.currentPage}`;
                 prevBtn.disabled = (this.currentPage === 1);
+                setupFavListeners();
             } else {
                 this.currentPage -= direction;
             }
@@ -51,6 +91,7 @@ export default class WeaponAll {
     
         document.getElementById('next-btn').addEventListener('click', () => updatePage(1));
         document.getElementById('prev-btn').addEventListener('click', () => updatePage(-1));
-        }
+        setupFavListeners();    
+    }
 
 }
