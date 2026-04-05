@@ -8,7 +8,11 @@
       "endurance": 1,
       "notation": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/link.webp?raw=true",
-      "equipementIds": ["w1", "b2", "s1"]
+      "equipementIds": [
+        "w1",
+        "b2",
+        "s1"
+      ]
     },
     {
       "id": "2",
@@ -18,7 +22,9 @@
       "endurance": 2,
       "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/mipha.webp?raw=true",
-      "equipementIds": ["w2"]
+      "equipementIds": [
+        "w2"
+      ]
     },
     {
       "id": "3",
@@ -28,7 +34,9 @@
       "endurance": 1,
       "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/daruk.webp?raw=true",
-      "equipementIds": ["w3"]
+      "equipementIds": [
+        "w3"
+      ]
     },
     {
       "id": "4",
@@ -38,7 +46,9 @@
       "endurance": 3,
       "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/revali.webp?raw=true",
-      "equipementIds": ["b2"]
+      "equipementIds": [
+        "b2"
+      ]
     },
     {
       "id": "5",
@@ -48,7 +58,10 @@
       "endurance": 2,
       "notation": 5,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/urbosa.webp?raw=true",
-      "equipementIds": ["w4", "s2"]
+      "equipementIds": [
+        "w4",
+        "s2"
+      ]
     },
     {
       "id": "6",
@@ -68,7 +81,9 @@
       "endurance": 2,
       "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/sidon.webp?raw=true",
-      "equipementIds": ["w8"]
+      "equipementIds": [
+        "w8"
+      ]
     },
     {
       "id": "8",
@@ -78,7 +93,9 @@
       "endurance": 1,
       "notation": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/yunobo.webp?raw=true",
-      "equipementIds": ["s3"]
+      "equipementIds": [
+        "s3"
+      ]
     },
     {
       "id": "9",
@@ -88,7 +105,9 @@
       "endurance": 3,
       "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/teba.webp?raw=true",
-      "equipementIds": ["b1"]
+      "equipementIds": [
+        "b1"
+      ]
     },
     {
       "id": "10",
@@ -98,7 +117,9 @@
       "endurance": 2,
       "notation": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/riju.webp?raw=true",
-      "equipementIds": ["s3"]
+      "equipementIds": [
+        "s3"
+      ]
     },
     {
       "id": "11",
@@ -128,7 +149,9 @@
       "endurance": 1,
       "notation": 8,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/faras.webp?raw=true",
-      "equipementIds": ["w9"]
+      "equipementIds": [
+        "w9"
+      ]
     },
     {
       "id": "14",
@@ -168,7 +191,9 @@
       "endurance": 2,
       "notation": 10,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/roam.webp?raw=true",
-      "equipementIds": ["w8"]
+      "equipementIds": [
+        "w8"
+      ]
     }
   ],
   "monstres": [
@@ -177,36 +202,63 @@
       "nom": "Bokoblin Rouge",
       "type": "Standard",
       "points_de_vie": 13,
-      "notation": [1, 1, 1],
+      "notation": [
+        1,
+        1,
+        1
+      ],
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/monstres/bokoblin_rouge.webp?raw=true",
-      "equipementIds": ["w6", "s3"]
+      "equipementIds": [
+        "w6",
+        "s3"
+      ]
     },
     {
       "id": "m2",
       "nom": "Lizalfos Bleu",
       "type": "Aquatique",
       "points_de_vie": 120,
-      "notation": [2, 3],
+      "notation": [
+        2,
+        3
+      ],
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/blue_lizalfos/image",
-      "equipementIds": ["w7", "w9"]
+      "equipementIds": [
+        "w7",
+        "w9"
+      ]
     },
     {
       "id": "m3",
       "nom": "Lynel d'Argent",
       "type": "Élite",
       "points_de_vie": 6000,
-      "notation": [5, 4, 5],
+      "notation": [
+        5,
+        4,
+        5
+      ],
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/silver_lynel/image",
-      "equipementIds": ["w5", "b3", "s1"]
+      "equipementIds": [
+        "w5",
+        "b3",
+        "s1"
+      ]
     },
     {
       "id": "m4",
       "nom": "Moblin",
       "type": "Standard",
       "points_de_vie": 56,
-      "notation": [1, 2, 2],
+      "notation": [
+        1,
+        2,
+        2
+      ],
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/moblin/image",
-      "equipementIds": ["w6"]
+      "equipementIds": [
+        "w6"
+      ]
     }
   ],
   "equipements": [
@@ -215,7 +267,14 @@
       "nom": "Épée de légende",
       "type": "Arme",
       "puissance": 30,
-      "notation": [4, 5, 3],
+      "notation": [
+        4,
+        5,
+        3,
+        2,
+        4,
+        4
+      ],
       "description": "L'épée qui repousse le mal.",
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/master_sword/image"
     },
@@ -224,7 +283,11 @@
       "nom": "Lance d'écailles de lumière",
       "type": "Arme",
       "puissance": 22,
-      "notation": [5, 5, 5],
+      "notation": [
+        5,
+        5,
+        5
+      ],
       "description": "Une lance élégante maniée par Mipha.",
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/lightscale_trident/image"
     },
@@ -287,6 +350,7 @@
       "nom": "Épée de foudre",
       "type": "Arme",
       "puissance": 22,
+      "notation": [],
       "description": "Une épée magique forgée dans les montagnes.",
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/thunderblade/image"
     },
@@ -346,16 +410,61 @@
     }
   ],
   "categories": [
-    { "id": 1, "nom": "Hylien", "icone": ""},
-    { "id": 2, "nom": "Zora", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/zora.webp?raw=true"},
-    { "id": 3, "nom": "Goron", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/goron.webp?raw=true"},
-    { "id": 4, "nom": "Piaf", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/piaf2.webp?raw=true"},
-    { "id": 5, "nom": "Gerudo", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/gerudo2.webp?raw=true"},
-    { "id": 6, "nom": "Sheikah", "icone": "" },
-    { "id": 7, "nom": "Korogu", "icone": "" },
-    { "id": 8, "nom": "Monstre", "icone": "" },
-    { "id": 9, "nom": "Arme", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/epee.webp?raw=true" },
-    { "id": 9, "nom": "Arc", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/arc.webp?raw=true"},
-    { "id": 9, "nom": "Bouclier", "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/shield.webp?raw=true"}
-  ]
+    {
+      "id": "1",
+      "nom": "Hylien",
+      "icone": ""
+    },
+    {
+      "id": "2",
+      "nom": "Zora",
+      "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/zora.webp?raw=true"
+    },
+    {
+      "id": "3",
+      "nom": "Goron",
+      "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/goron.webp?raw=true"
+    },
+    {
+      "id": "4",
+      "nom": "Piaf",
+      "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/piaf2.webp?raw=true"
+    },
+    {
+      "id": "5",
+      "nom": "Gerudo",
+      "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/gerudo2.webp?raw=true"
+    },
+    {
+      "id": "6",
+      "nom": "Sheikah",
+      "icone": ""
+    },
+    {
+      "id": "7",
+      "nom": "Korogu",
+      "icone": ""
+    },
+    {
+      "id": "8",
+      "nom": "Monstre",
+      "icone": ""
+    },
+    {
+      "id": "9",
+      "nom": "Arme",
+      "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/epee.webp?raw=true"
+    },
+    {
+      "id": "9",
+      "nom": "Arc",
+      "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/arc.webp?raw=true"
+    },
+    {
+      "id": "9",
+      "nom": "Bouclier",
+      "icone": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/icones/shield.webp?raw=true"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
