@@ -13,10 +13,15 @@ Le projet permet de découvrir l'univers du jeu Zelda Breath of the Wild : perso
 - Hachelef Asma (@Asminouch)  
 
 ## Installation et lancement
+
+### Prérequis
+
+Il faut avoir Node.js d'installer pour utiliser les commandes 'npm' (Node Package Manager). Si vous ne l'avez pas déjà d'installer, nous vous renvoyons vers le site officiel: https://nodejs.org/
+
 ### Packages nécessaires au lancement de la Single Page Application (SPA)
 Nous utilisons json-server, qui nous permet d'imiter une API Rest et de fournir un accès dynamique aux données, à l'aide d'un simple fichier JSON. Le fichier JSON a été fait par nous même.
 
-Installer le json-server : 
+Le projet utilise npm pour gérer les paquets (Vite, Vue, JSON-Server): 
     `npm install json-server`
 
 ### Lancement de la page
@@ -36,15 +41,20 @@ Vous pouvez accéder aux données de l'api en cliquant sur les liens qui apparai
 
 
 
-**Terminal 2 lancement du serveur web** :
-    `php -S localhost:8080`
+**Terminal 2 lancement du serveur de développement avec Vite** :
+    `npm run dev`
 
-Vous pouvez accédez à l'application en cliquant sur `http://localhost:8080`
+    
+
+Vous pouvez accédez à l'application en cliquant sur `http://localhost:5173`
 
 
 **Remarque**
 
 Pour voir les images, soyez bien connecté à Internet.
+
+Le lancement via `php -S localhost:8080` est remplacé par le serveurde développement de Vite qui gère les modules JS.
+
 
 
 ### Explication des routes mises en place
@@ -70,34 +80,35 @@ Si une route n'existe pas (ex: `#/toto` ), alors le routeur renvoie vers la page
 
 Le code est structuré avec différents modules, pour respecter les principes de séparation des responsabilités.
 
-- app.js : Initialise le routeur et gèle les évenements globaux (recherche, clics).
-- services/ : Contient la logique d'accès aux données.
+- index.html: Seul fichier HTML de la SPA.
+- src/js/app.js : Initialise le routeur et gèle les évenements globaux (recherche, clics).
+- src/js/services/ : Contient la logique d'accès aux données.
     - Utils.js: Fonctions utilitaires (parsing d'URL).
     - Les Providers (ex: WeaponProvider.js) : Des classes statiques qui gèrent les appels fetch vers le json-server. Ils permettent de centraliser la logique des opération de CRUD. Le FavoriteProvider.js utilise le LocalStorage, et permet à l'utilisateur de retrouver ses favoris même après avoir fermé le navigateur.
-- views/ : Contient les composants de rendu HTML
+- src/js/views/ : Contient les composants de rendu HTML
     - pages/ : Chaque fichier (ex: Home.js ou WeaponShow.js) possède une méthode `render()`pour le HTML et certains ont une méthode `after_render()` pour gérer l'intéractivité.
     - Pagination : Implémentée côté client avec calcul dynamique des pages en fonction de la taille totale des données récupérées depuis le serveur pour chaque type (personnage, équipement, monstre). La pagination est dans les fichiers views XAll.js, mais le calcul total des éléments est dans les Providers.
+- src/style/ : Contient les feuilles de style CSS
+
+### Classes
+Le code utilise la programmation orientée objet (POO), chaque page est un module isolé et réutilisable.
   
-## Bundle
-Afin de déployer l'application en production avec un bundler nous avons fait le choix de choisir Vite.
+## Bundler et mise en production
 
-### Installation
+Afin de déployer l'application en production avec un bundler nous avons fait le choix de choisir Vite (basé sur Rollup).
 
-- Installation des dépendances du bundler: `npm install`
-- Génération du bundle: `npm run build`
+### Configuratin du Bundler
+Le fichier de configuration (vite.config.js) permet de: compiler les modules JavaScripts, intégrer le plugin @vitejs/plugin-vue pour supporter d'éventuels composants Vue.js, et minifier le code (suppression des espaces et commentaire) pour réduire le poids des fichiers.
+
+### Génération du bundle
+Pour générer les fichier de production : `npm run build`
+
+Cela génère un dossier `/dist` qui contient un fichier HTML unique et des fichier JS/CSS compressés, prêts à être hébergés.
+
+- Pour tester les modules (Développement): on utilise `npm run dev`. Les fichiers sont chargés individuellement par le navigateur.
+- Pour utiliser le bundle (Production): On utilise `npm run build` puis `npm run preview`. Vite simule ainsi la mise en ligne du dossier `/dist`.
 
 
-
-
-• commandes pour générer le bundle,
-• installation à effectuer,
-• explication du fichier de config du bundler,
-• modifications à effectuer dans le code pour utiliser le bundle ou non (pour tester les modules),
-
-
-description de ce que fait chaque module dans readme et dans le module 
-Comprendre comment on a organisé le code
-partie mise en production avec élément fourni par M.COCHARD
 
 
 ## Détail des fonctionnalités du site
