@@ -41,5 +41,18 @@ export default class CharacterProvider {
         }
     }
 
+    static updateCharacter = async (id, characterData) => {
+    const options = {
+        method: 'PUT',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(characterData)
+    };
+    try {
+        const response = await fetch(`${ENDPOINT}/personnages/${id}`, options);
+        return await response.json();
+    } catch (err) {
+        console.error("Erreur lors de la mise à jour du personnage", err);
+    }
+}
    
 }
