@@ -59,12 +59,13 @@ export default class CharacterAll {
     async after_render() {
     //recherche
     const recherche = document.getElementById("recherche");
-    recherche.addEventListener("input", () => {
+    if (recherche){
+        recherche.addEventListener("input", () => {
         const input = recherche.value.toLowerCase();
         console.log("Recherche : " + input);
-
-    
         })
+    }
+    
   
     //Pagination
     const listContainer = document.getElementById('list');
@@ -72,17 +73,21 @@ export default class CharacterAll {
     const prevBtn = document.getElementById('prev-btn');
 
     // Gestion des favoris
-    let checkboxes = document.querySelectorAll('.heart-checkbox');
-    for (let j = 0; j < checkboxes.length; j++) {
-        checkboxes[j].addEventListener('change', function(event) {
-            let checkbox = event.target;
-            let itemData = {
-                id: checkbox.getAttribute('data-id'),
-                nom: checkbox.getAttribute('data-nom')
+    const favs= () => {
+        let checkboxes = document.querySelectorAll('.heart-checkbox');
+        for (let j = 0; j < checkboxes.length; j++) {
+            checkboxes[j].onclick = function(event) {
+                let checkbox = event.target;
+                let itemData = {
+                    id: checkbox.getAttribute('data-id'),
+                    nom: checkbox.getAttribute('data-nom')
+                };
+                FavoriteProvider.toggleFavorite(itemData, 'personnages');
             };
-            FavoriteProvider.toggleFavorite(itemData, 'personnages');
-        });
+        }
     }
+    favs();
+    
     // Gestion Pagination
     const updatePage = async (direction) => {
         this.currentPage += direction;
@@ -92,6 +97,7 @@ export default class CharacterAll {
             listContainer.innerHTML = this.renderList(data);
             pageInfo.textContent = `Page ${this.currentPage}`;
             prevBtn.disabled = (this.currentPage === 1);
+            favs();
         } else {
             this.currentPage -= direction;
         }
