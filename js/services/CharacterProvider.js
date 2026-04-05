@@ -41,6 +41,18 @@ export default class CharacterProvider {
         }
     }
 
+
+    static countTotalCharacters = async () => {
+    try {
+        const response = await fetch(`${ENDPOINT}/personnages`);
+        const json = await response.json();
+        return json.length;
+    } catch(err) {
+        console.error("Erreur comptage", err);
+        return 0;
+    }
+}
+
     static updateCharacter = async (id, characterData) => {
     const options = {
         method: 'PUT',
@@ -50,7 +62,7 @@ export default class CharacterProvider {
     try {
         const response = await fetch(`${ENDPOINT}/personnages/${id}`, options);
         return await response.json();
-    } catch (err) {
+    } catch(err) {
         console.error("Erreur lors de la mise à jour du personnage", err);
     }
 }

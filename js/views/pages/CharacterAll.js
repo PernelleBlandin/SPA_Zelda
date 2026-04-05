@@ -1,104 +1,99 @@
 import CharacterProvider from "../../services/CharacterProvider.js";
 import FavoriteProvider from "../../services/FavoriteProvider.js";
-import SearchProvider from "../../services/SearchProvider.js";
 
 export default class CharacterAll {
     constructor() {
         this.currentPage = 1;
         this.limit = 6;
+        this.totalPages = 1;
     }
 
-
+    
     renderList(personnages) {
         if (!personnages || !Array.isArray(personnages)) return "";
-        let htmlResultat = "";
-    
-        for (let i = 0; i < personnages.length; i++) {
-            let perso = personnages[i];
+        return personnages.map(perso => {
             let estFavori = FavoriteProvider.isFavorite(perso.id, 'personnages');
-
-        htmlResultat += `
+            return `
             <li class="item-li">
                 <div class="item-content">
                     <a href="#/personnages/${perso.id}">${perso.nom}</a>
                 </div>
                 <div class="fav-container">
-                    <input type="checkbox" 
-                           id="heart-${perso.id}" 
-                           class="heart-checkbox" 
-                           data-id="${perso.id}" 
-                           data-nom="${perso.nom}"
-                           ${estFavori ? 'checked' : ''}>
+                    <input type="checkbox" id="heart-${perso.id}" class="heart-checkbox" 
+                           data-id="${perso.id}" data-nom="${perso.nom}" ${estFavori ? 'checked' : ''}>
                     <label for="heart-${perso.id}" class="heart-label">&#9829;</label>
                 </div>
             </li>`;
+        }).join("");
     }
-    
-    return htmlResultat;
+
+    favorisEvent() {
+        const checkboxes = document.querySelectorAll('.heart-checkbox');
+        checkboxes.forEach(cb => {
+            cb.onclick = () => {
+                const itemData = {
+                    id: cb.dataset.id,
+                    nom: cb.dataset.nom
+                };
+                FavoriteProvider.toggleFavorite(itemData, 'personnages');
+            };
+        });
     }
 
 
     async render() {
-        let personnages = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
-        console.log(personnages);
-       
-        let view = `
+        const totalPersos = await CharacterProvider.countTotalCharacters();
+        this.totalPages = Math.ceil(totalPersos / this.limit);
+        const personnagesData = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
+
+        return `
             <h2>Tous les personnages</h2>
-            <ul id="list">
-                ${this.renderList(personnages)}
-                
+            <ul id="characters-list"> ${this.renderList(personnagesData)}
             </ul>
             <div class="pagination-controls">
                 <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
-                <span id="page-info">Page ${this.currentPage}</span>
-                <button id="next-btn">Suivant</button>
+                <div class="page-selector">
+                    Page 
+                    <input type="number" id="page-input" 
+                           value="${this.currentPage}" 
+                           min="1" max="${this.totalPages}" 
+                           style="width: 50px; text-align: center;"> 
+                    sur ${this.totalPages}
+                </div>
+                <button id="next-btn" ${this.currentPage >= this.totalPages ? 'disabled' : ''}>Suivant</button>
             </div>
         `;
-        return view;
     }
 
     async after_render() {
-    //recherche
-    //const recherche = document.getElementById("recherche");
-    
-  
-    //Pagination
-    const listContainer = document.getElementById('list');
-    const pageInfo = document.getElementById('page-info');
-    const prevBtn = document.getElementById('prev-btn');
+        const listContainer = document.getElementById('characters-list');
+        const pageInput = document.getElementById('page-input');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
 
-    // Gestion des favoris
-    const favs= () => {
-        let checkboxes = document.querySelectorAll('.heart-checkbox');
-        for (let j = 0; j < checkboxes.length; j++) {
-            checkboxes[j].onclick = function(event) {
-                let checkbox = event.target;
-                let itemData = {
-                    id: checkbox.getAttribute('data-id'),
-                    nom: checkbox.getAttribute('data-nom')
-                };
-                FavoriteProvider.toggleFavorite(itemData, 'personnages');
-            };
-        }
-    }
-    favs();
-    
-    // Gestion Pagination
-    const updatePage = async (direction) => {
-        this.currentPage += direction;
-        const data = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
-       
-        if (data.length > 0) {
-            listContainer.innerHTML = this.renderList(data);
-            pageInfo.textContent = `Page ${this.currentPage}`;
-            prevBtn.disabled = (this.currentPage === 1);
-            favs();
-        } else {
-            this.currentPage -= direction;
-        }
-    };
+        this.favorisEvent();
 
-    document.getElementById('next-btn').addEventListener('click', () => updatePage(1));
-    document.getElementById('prev-btn').addEventListener('click', () => updatePage(-1));
+        const updatePage = async (newPage) => {
+            if (newPage < 1 || newPage > this.totalPages) {
+                if (pageInput) pageInput.value = this.currentPage;
+                return;
+            }
+            this.currentPage = newPage;
+            const data = await CharacterProvider.fetchCharacters(this.currentPage, this.limit);
+
+            if (listContainer && data) {
+                listContainer.innerHTML = this.renderList(data);
+                if (pageInput) pageInput.value = this.currentPage;
+                prevBtn.disabled = (this.currentPage === 1);
+                nextBtn.disabled = (this.currentPage >= this.totalPages);
+                this.favorisEvent();
+            }
+        };
+
+        if (pageInput) {
+            pageInput.onchange = (e) => updatePage(parseInt(e.target.value));
+        }
+        if (nextBtn) nextBtn.onclick = () => updatePage(this.currentPage + 1);
+        if (prevBtn) prevBtn.onclick = () => updatePage(this.currentPage - 1);
     }
 }

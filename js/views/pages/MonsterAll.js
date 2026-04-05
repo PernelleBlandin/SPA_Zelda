@@ -4,6 +4,7 @@ export default class MonsterAll {
     constructor() {
         this.currentPage = 1;
         this.limit = 6;
+        this.totalPages = 1;
     }
 
     renderList(monstres) {
@@ -14,8 +15,9 @@ export default class MonsterAll {
     }
 
     async render () {
-        let monstres = await MonsterProvider.fetchMonsters(this.currentPage, this.limit);
-        console.log(monstres);
+        const total = await MonsterProvider.countTotalMonsters();
+        this.totalPages = Math.ceil(total / this.limit);
+        const monstres = await MonsterProvider.fetchMonsters(this.currentPage, this.limit);
         let view = `
         <h2>Tous les monstres</h2>
         <ul id="list">
@@ -23,33 +25,46 @@ export default class MonsterAll {
             </ul>
             <div class="pagination-controls">
                 <button id="prev-btn" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
-                <span id="page-info">Page ${this.currentPage}</span>
-                <button id="next-btn">Suivant</button>
+                <div class="page-selector">
+                    Page 
+                    <input type="number" id="page-input" 
+                        value="${this.currentPage}" 
+                        min="1" max="${this.totalPages}" 
+                        style="width: 50px; text-align: center;"> 
+                    sur ${this.totalPages}
+                </div>
+                <button id="next-btn" ${this.currentPage >= this.totalPages ? 'disabled' : ''}>Suivant</button>
             </div>
-    `;
-    return view;
+            `;
+        return view;
     }
 
     async after_render() {
         const listContainer = document.getElementById('list');
-        const pageInfo = document.getElementById('page-info');
+        const pageInput = document.getElementById('page-input');
         const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
     
-        const updatePage = async (direction) => {
-            this.currentPage += direction;
+        const updatePage = async (newPage) => {
+            if (newPage < 1 || newPage > this.totalPages) {
+                pageInput.value = this.currentPage; // On remet l'ancienne valeur si erreur
+                return;
+            }
+            this.currentPage = newPage;
             const data = await MonsterProvider.fetchMonsters(this.currentPage, this.limit);
-           
-            if (data.length > 0) {
+            
+            if (listContainer && data) {
                 listContainer.innerHTML = this.renderList(data);
-                pageInfo.textContent = `Page ${this.currentPage}`;
+                pageInput.value = this.currentPage;
                 prevBtn.disabled = (this.currentPage === 1);
-            } else {
-                this.currentPage -= direction;
+                nextBtn.disabled = (this.currentPage >= this.totalPages);
             }
         };
-    
-        document.getElementById('next-btn').addEventListener('click', () => updatePage(1));
-        document.getElementById('prev-btn').addEventListener('click', () => updatePage(-1));
-        }
 
+        if (pageInput) {
+            pageInput.onchange = (e) => updatePage(parseInt(e.target.value));
+        }
+        if (nextBtn) nextBtn.onclick = () => updatePage(this.currentPage + 1);
+        if (prevBtn) prevBtn.onclick = () => updatePage(this.currentPage - 1);
+    }
 }
