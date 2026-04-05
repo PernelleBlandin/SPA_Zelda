@@ -4,6 +4,9 @@ import WeaponProvider from "./../../services/WeaponProvider.js";
 export default class WeaponShow {
 
     async getNotations(notation){
+        if(notation.length === 0){
+            return "Aucune notation pour le moment"
+        }
         let sum_note = 0;
 
         for (const el of notation){
@@ -11,15 +14,29 @@ export default class WeaponShow {
             sum_note += el;
 
         }
-        let moy = sum_note / notation.length
-        return moy;   
+        let moy = sum_note / notation.length;
+        return moy.toFixed(2);   
     }
 
-    noter(NoterForm){  
-        // var input=NoterForm.input.value;
-        // document.getElementById("test").innerHTML+=input;
-        // return false;
-            document.querySelector("#notationInput");
+    async after_render(Index){  
+            const input = document.querySelector("#notationInput");
+            const button = document.querySelector("#notationButton");   
+
+            button.addEventListener("click", async () => {
+                const new_note = parseInt(input.value);
+                console.log("new note", new_note);
+                if(new_note >= 0 && new_note <= 5){
+                    let equipement = await WeaponProvider.getWeapon(Index);
+
+                    equipement.notation.push(new_note);
+                    console.log("equipement avec nouvelle note", equipement);
+                    await WeaponProvider.updateWeapon(Index, equipement);
+
+                    alert("Merci pour votre notation !");
+                    window.location.reload();
+                }
+            });
+
     }
 
     // fonction qui recupere l'element entré en Input, 
@@ -48,11 +65,9 @@ export default class WeaponShow {
                 <p>Puissance : ${equipement.puissance}</p>
                 <p>Notation : ${notations}</p>
 
-                <p id="test">Noter cet équipement ? </p>
-                <form name="NoterForm" onsubmit="return noter(this)">     
-                    <input type="number" name="notationInput" min=0 max=5 required />
-                    <button type="button" id="notationButton" onclick="noter">Noter</button>
-                </form>
+                <p id="test">Noter cet équipement ? </p> 
+                    <input type="number" id="notationInput" min="0" max="5" value="3" required />
+                    <button id="notationButton">Noter</button>
             </section>
             `;
         return view

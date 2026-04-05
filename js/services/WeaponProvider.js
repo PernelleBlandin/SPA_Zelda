@@ -37,5 +37,22 @@ export default class WeaponProvider {
         }
     }
 
+
+    static updateWeapon = async (id, weaponData) => {
+        const options = {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(weaponData)
+        };
+        try {
+            const response = await fetch(`${ENDPOINT}/equipements/${id}`, options);
+            return await response.json();
+        } catch (err) {
+            console.error("Error updating weapon", err);
+        }
+    }
+
     
 }

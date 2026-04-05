@@ -36,6 +36,9 @@ const router = async()=>{
     let page= new pageC();
 
     content.innerHTML = await page.render(request.id);
+    if(page.after_render){
+        await page.after_render(request.id);
+    }
 }
 
 window.addEventListener("hashchange", router);
