@@ -41,5 +41,17 @@ export default class CharacterProvider {
         }
     }
 
+
+    static countTotalCharacters = async () => {
+    try {
+        const response = await fetch(`${ENDPOINT}/personnages`);
+        const json = await response.json();
+        return json.length;
+    } catch (err) {
+        console.error("Erreur comptage", err);
+        return 0;
+    }
+}
+
    
 }
