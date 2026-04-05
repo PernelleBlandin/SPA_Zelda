@@ -256,7 +256,10 @@
         3,
         2,
         4,
-        4
+        4,
+        3,
+        3,
+        5
       ],
       "description": "L'épée qui repousse le mal.",
       "image": "https://botw-compendium.herokuapp.com/api/v3/compendium/entry/master_sword/image"

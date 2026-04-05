@@ -4,7 +4,7 @@ import WeaponProvider from "./../../services/WeaponProvider.js";
 export default class WeaponShow {
 
     async getNotations(notation){
-        if(notation.length === 0){
+        if(!notation ||notation.length === 0){
             return "Aucune notation pour le moment"
         }
         let sum_note = 0;
@@ -28,6 +28,7 @@ export default class WeaponShow {
                 if(new_note >= 0 && new_note <= 5){
                     let equipement = await WeaponProvider.getWeapon(Index);
 
+                    if (!equipement.notation) equipement.notation = [];
                     equipement.notation.push(new_note);
                     console.log("equipement avec nouvelle note", equipement);
                     await WeaponProvider.updateWeapon(Index, equipement);
@@ -49,7 +50,8 @@ export default class WeaponShow {
         let equipement = await WeaponProvider.getWeapon(Index);
         console.log(equipement);
  
-        let notations = await this.getNotations(equipement.notation);
+        const notationData = equipement.notation ? equipement.notation : [];
+        let notations = await this.getNotations(equipement.notation || []);
         console.log("notation; ", notations);
        
         let view = `
@@ -63,7 +65,8 @@ export default class WeaponShow {
                 <p>Notation : ${notations}</p>
 
                 <p id="test">Noter cet équipement ? </p> 
-                    <input type="number" id="notationInput" min="0" max="5" value="3" required />
+                    <input type="number" id="notationInput" min="0" max="5" value="3" required
+                        style="display: inline-block; width: 60px; padding: 5px; border: 1px solid #ccc;" />
                     <button id="notationButton">Noter</button>
             </section>
             `;

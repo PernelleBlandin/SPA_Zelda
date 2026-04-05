@@ -49,8 +49,9 @@ window.addEventListener("load",router);
 
 const recherche = document.getElementById("recherche_input");
 
+if (recherche){
 
-recherche.addEventListener("input", async() => {
+    recherche.addEventListener("input", async() => {
     const res = document.getElementById("recherche_res");
     const input = recherche.value.toLowerCase();
     console.log("Recherche : " + input);
@@ -71,9 +72,15 @@ recherche.addEventListener("input", async() => {
         </div>
     `).join("");
     });
+}
+
     document.addEventListener("click", (e) => {
-        if (!document.getElementById("recherche_form").contains(e.target)) {
-            res.innerHTML = "";
+        const form = document.getElementById("recherche_form");
+        const res = document.getElementById("recherche_res");
+        
+        // On vérifie que "form" existe avant de faire le .contains
+        if (form && !form.contains(e.target)) {
+            if (res) res.innerHTML = "";
         }
     
 });
