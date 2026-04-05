@@ -1,5 +1,6 @@
 import CharacterProvider from "../../services/CharacterProvider.js";
 import FavoriteProvider from "../../services/FavoriteProvider.js";
+import SearchProvider from "../../services/SearchProvider.js";
 
 export default class CharacterAll {
     constructor() {
@@ -58,13 +59,7 @@ export default class CharacterAll {
 
     async after_render() {
     //recherche
-    const recherche = document.getElementById("recherche");
-    if (recherche){
-        recherche.addEventListener("input", () => {
-        const input = recherche.value.toLowerCase();
-        console.log("Recherche : " + input);
-        })
-    }
+    //const recherche = document.getElementById("recherche");
     
   
     //Pagination

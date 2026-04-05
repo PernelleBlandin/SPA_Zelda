@@ -7,9 +7,9 @@ export default class SearchProvider {
         const q = query.toLowerCase();
         
         const data = await Promise.all([
-            CharacterProvider.fetchCharacters(50),
-            WeaponProvider.fetchWeapons(50),
-            MonsterProvider.fetchMonsters(50)
+            CharacterProvider.fetchCharacters(1,50),
+            WeaponProvider.fetchWeapons(1,50),
+            MonsterProvider.fetchMonsters(1,50)
         ]);
 
         const chars = data[0];

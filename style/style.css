@@ -145,9 +145,7 @@ h1, h2 {
    background: #e9ecef;
 }
 
-input {
-  display: none;
-}
+
 
 .item-li {
    display: flex;
@@ -172,6 +170,7 @@ input {
 
 .heart-checkbox:checked + label {
     color: red;
+}
 #recherche_form {
    position: relative;
    display: flex;

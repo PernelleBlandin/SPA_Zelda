@@ -37,6 +37,7 @@ const router = async()=>{
     let page= new pageC();
 
     content.innerHTML = await page.render(request.id);
+    initRecherche();
     if(page.after_render){
         await page.after_render(request.id);
     }
@@ -47,11 +48,11 @@ window.addEventListener("hashchange", router);
 window.addEventListener("load",router);
 
 
-const recherche = document.getElementById("recherche_input");
+function initRecherche(){
+    const recherche = document.getElementById("recherche_input");
+    if (recherche){
 
-if (recherche){
-
-    recherche.addEventListener("input", async() => {
+    recherche.oninput=  async() => {
     const res = document.getElementById("recherche_res");
     const input = recherche.value.toLowerCase();
     console.log("Recherche : " + input);
@@ -71,8 +72,10 @@ if (recherche){
             </a>
         </div>
     `).join("");
-    });
+    };
 }
+}
+
 
     document.addEventListener("click", (e) => {
         const form = document.getElementById("recherche_form");
