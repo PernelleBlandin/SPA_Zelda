@@ -51,7 +51,7 @@ export default class WeaponProvider {
             const response = await fetch(`${ENDPOINT}/equipements/${id}`, options);
             return await response.json();
         } catch (err) {
-            console.error("Error updating weapon", err);
+            console.error("Erreur mise à jour arme", err);
         }
     }
 
@@ -61,10 +61,9 @@ export default class WeaponProvider {
             const response = await fetch(`${ENDPOINT}/equipements`);
             const json = await response.json();
             return json.length;
-        } catch (err) {
+         }catch (err) {
             console.error("Erreur comptage armes", err);
         }
     }
-
-    
+   
 }

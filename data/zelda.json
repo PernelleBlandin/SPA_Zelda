@@ -7,8 +7,14 @@
       "coeurs": 3,
       "endurance": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/link.webp?raw=true",
-      "equipementIds": ["w1", "b2", "s1"],
-      "puissance": 148
+      "equipementIds": [
+        "w1",
+        "b2",
+        "s1",
+        "b3",
+        "s2"
+      ],
+      "puissance": 228
     },
     {
       "id": "2",
@@ -17,7 +23,9 @@
       "coeurs": 10,
       "endurance": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/mipha.webp?raw=true",
-      "equipementIds": ["w2"],
+      "equipementIds": [
+        "w2"
+      ],
       "puissance": 22
     },
     {
@@ -27,7 +35,9 @@
       "coeurs": 15,
       "endurance": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/daruk.webp?raw=true",
-      "equipementIds": ["w3"],
+      "equipementIds": [
+        "w3"
+      ],
       "puissance": 60
     },
     {
@@ -37,7 +47,9 @@
       "coeurs": 8,
       "endurance": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/revali.webp?raw=true",
-      "equipementIds": ["b2"],
+      "equipementIds": [
+        "b2"
+      ],
       "puissance": 28
     },
     {
@@ -47,7 +59,10 @@
       "coeurs": 12,
       "endurance": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/urbosa.webp?raw=true",
-      "equipementIds": ["w4", "s2"],
+      "equipementIds": [
+        "w4",
+        "s2"
+      ],
       "puissance": 80
     },
     {
@@ -67,7 +82,9 @@
       "coeurs": 12,
       "endurance": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/sidon.webp?raw=true",
-      "equipementIds": ["w8"],
+      "equipementIds": [
+        "w8"
+      ],
       "puissance": 7
     },
     {
@@ -77,7 +94,9 @@
       "coeurs": 14,
       "endurance": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/yunobo.webp?raw=true",
-      "equipementIds": ["s3"],
+      "equipementIds": [
+        "s3"
+      ],
       "puissance": 3
     },
     {
@@ -87,7 +106,9 @@
       "coeurs": 10,
       "endurance": 3,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/teba.webp?raw=true",
-      "equipementIds": ["b1"],
+      "equipementIds": [
+        "b1"
+      ],
       "puissance": 5
     },
     {
@@ -97,7 +118,9 @@
       "coeurs": 8,
       "endurance": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/riju.webp?raw=true",
-      "equipementIds": ["s3"],
+      "equipementIds": [
+        "s3"
+      ],
       "puissance": 3
     },
     {
@@ -107,8 +130,10 @@
       "coeurs": 5,
       "endurance": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/impa.webp?raw=true",
-      "equipementIds": [],
-      "puissance": 0
+      "equipementIds": [
+        "b1"
+      ],
+      "puissance": 5
     },
     {
       "id": "12",
@@ -127,7 +152,9 @@
       "coeurs": 3,
       "endurance": 1,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/faras.webp?raw=true",
-      "equipementIds": ["w9"],
+      "equipementIds": [
+        "w9"
+      ],
       "puissance": 22
     },
     {
@@ -167,7 +194,9 @@
       "coeurs": 15,
       "endurance": 2,
       "image": "https://github.com/PernelleBlandin/Zelda_images_personnages/blob/main/img_zelda/personnages/roam.webp?raw=true",
-      "equipementIds": ["w8"],
+      "equipementIds": [
+        "w8"
+      ],
       "puissance": 7
     }
   ],
